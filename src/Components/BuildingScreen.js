@@ -6,8 +6,6 @@ const BuildingScreen = ({ className, style }) => {
     const { url, color } = useTheaterProjector();
     const { isReady } = useLoader();
 
-    console.log(url);
-
     const colors = {
         "pink": "tw-shadow-pink-200",
         "slate": "tw-shadow-slate-400",

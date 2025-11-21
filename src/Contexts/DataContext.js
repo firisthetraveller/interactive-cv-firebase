@@ -1,6 +1,4 @@
-import { faCampground, faGamepad, faPaintBrush, faPersonRunning, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
-import { createContext, useEffect, useReducer, useState } from "react";
-import useCollection from "../Hooks/useCollection";
+import { createContext } from "react";
 
 const DataContext = createContext({
     sections: {

@@ -6,12 +6,12 @@ export const TheaterProvider = ({children}) => {
     const [state, dispatch] = useReducer(theaterReducer, null);
 
     const switchMovie = (url, color = null) => {
-        console.log(`Called switch: ${url} ${color}`)
+        // console.log(`Called switch: ${url} ${color}`)
         dispatch({type: "switch", url, color});
     }
 
     const clearTheater = () => {
-        console.log("Called clear.")
+        // console.log("Called clear.")
         dispatch({type: "clear"});
     }
 

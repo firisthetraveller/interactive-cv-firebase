@@ -22,7 +22,6 @@ const useCollection = (collection) => {
             setPending(false);
             setError(null);
         }, error => {
-            console.log(error);
             setData(null);
             setPending(false);
             setError('Could not fetch the data.');

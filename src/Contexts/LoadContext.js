@@ -1,4 +1,4 @@
-import { createContext, useEffect, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 export const LoadContext = createContext(null);
 
@@ -13,10 +13,6 @@ export const LoadProvider = ({ children }) => {
         // Contacts, Education, Highlights, Interests, Skills
         return state.size === 5;
     }
-
-    useEffect(() => {
-        console.log(state);
-    }, [state]);
 
     return <LoadContext.Provider value={{ ...state, loaded, isReady }}>
         {children}
