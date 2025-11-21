@@ -23,7 +23,7 @@ const BuildingScreen = ({ className, style }) => {
         <div className={`-tw-z-20 ${className}`} style={{ ...style }}>
             <ResizeSVG minWidth={1280} width={240} height={400} className="-tw-z-30">
                 {/** Ad board */}
-                <rect x={0} y={176} width={240} height={400} fill="#334155" />
+                <rect x={0} y={176} width={240} height={400} fill="#132135" />
 
                 {/** Ad board leg */}
                 <line x1={30} y1={0} x2={30} y2={176} strokeWidth={4} stroke="#000" />
@@ -37,7 +37,7 @@ const BuildingScreen = ({ className, style }) => {
             </ResizeSVG>
 
             {/** Contents of the ad board */}
-            <div className="-tw-z-30 tw-h-40 tw-w-60 tw-max-h-40 tw-max-w-60 tw-px-2 tw-flex tw-justify-center tw-items-center tw-bg-slate-500">
+            <div className={`-tw-z-30 tw-h-40 tw-w-60 tw-max-h-40 tw-max-w-60 tw-px-2 tw-flex tw-justify-center tw-items-center ${url ? "tw-bg-slate-500": "tw-bg-slate-800"}`}>
                 {url
                     ? <img src={url} alt={"Project preview"} className={`${color ? `tw-shadow-md ${colors[color]}` : ""}`} />
                     : <p className="tw-font-bold tw-font-[Meiryo] tw-text-center tw-text-slate-300"><span className="tw-tracking-widest tw-text-4xl">ラーメン</span><br />食べるために働きたい</p>
