@@ -1,18 +1,18 @@
 {
   "files": {
     "main.css": "/interactive-cv-firebase/static/css/main.5923e74f.css",
-    "main.js": "/interactive-cv-firebase/static/js/main.2a396322.js",
+    "main.js": "/interactive-cv-firebase/static/js/main.dcde4fbc.js",
     "static/js/453.3e63339f.chunk.js": "/interactive-cv-firebase/static/js/453.3e63339f.chunk.js",
     "static/media/Monocraft-Italic.ttf": "/interactive-cv-firebase/static/media/Monocraft-Italic.7ff4b45155130fae8685.ttf",
     "static/media/Monocraft-Bold.ttf": "/interactive-cv-firebase/static/media/Monocraft-Bold.f212b449da569a492654.ttf",
     "static/media/Monocraft.ttf": "/interactive-cv-firebase/static/media/Monocraft.4d8259b4003982f2210e.ttf",
     "index.html": "/interactive-cv-firebase/index.html",
     "main.5923e74f.css.map": "/interactive-cv-firebase/static/css/main.5923e74f.css.map",
-    "main.2a396322.js.map": "/interactive-cv-firebase/static/js/main.2a396322.js.map",
+    "main.dcde4fbc.js.map": "/interactive-cv-firebase/static/js/main.dcde4fbc.js.map",
     "453.3e63339f.chunk.js.map": "/interactive-cv-firebase/static/js/453.3e63339f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.5923e74f.css",
-    "static/js/main.2a396322.js"
+    "static/js/main.dcde4fbc.js"
   ]
 }
