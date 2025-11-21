@@ -26,6 +26,12 @@ const DataContext = createContext({
             "fr": "Développeur front-end",
             "en": "Frontend Web Developer"
         }
+    },
+    placeholders: {
+        interestInfo: {
+            "en": "Hover an icon above to show more info!",
+            "fr": "Survolez une icône pour en savoir plus!"
+        }
     }
 });
 

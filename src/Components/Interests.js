@@ -12,6 +12,7 @@ import useLoader from "../Hooks/useLoader";
 
 const Interests = () => {
     const title = useContext(DataContext).sections.interests;
+    const placeholder = useContext(DataContext).placeholders.interestInfo;
 
     const [infoLines, setInfoLines] = useState("");
     const { data, isPending, error } = useCollection("interests");
@@ -50,7 +51,7 @@ const Interests = () => {
                         :
                         <div>
                             <p className="tw-text-slate-400 tw-italic">
-                                Hover an icon above to show more info!
+                                {placeholder[language]}
                             </p><br /><p></p>
                         </div>
                     }
