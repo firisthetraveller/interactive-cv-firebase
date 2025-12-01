@@ -826,6 +826,11 @@ video {
   padding-bottom: 0.5rem;
 }
 
+.tw-py-5 {
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
+}
+
 .tw-pl-8 {
   padding-left: 2rem;
 }

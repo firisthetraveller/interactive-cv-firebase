@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 import { LightProvider } from "../Contexts/LightContext";
 
@@ -15,6 +15,8 @@ import BuildingScreen from "../Components/BuildingScreen";
 import { TheaterProvider } from "../Contexts/TheaterContext";
 import useCustomParallax from "../Hooks/useCustomParallax";
 import { LoadProvider } from "../Contexts/LoadContext";
+import DataContext from "../Contexts/DataContext";
+import { language } from "../Tools/lang";
 
 const SideView = () => {
     const { isMobile } = useWindowDimensions();
@@ -22,9 +24,12 @@ const SideView = () => {
     const { style: leftStyle } = useCustomParallax(0.55);
     const { style: buildingStyle } = useCustomParallax(0.1);
 
+    const goToDesktopPls = useContext(DataContext).placeholders.goToDesktopPls[language];
+
     return (
         <div className="xl:tw-h-full xl:tw-pt-16" style={isMobile() ? {} : { ...leftStyle }}>
             <Background />
+            {isMobile() && <p className="tw-italic tw-py-5">{goToDesktopPls}</p>}
             <Contacts />
             <Skills />
             <div className="tw-flex tw-space-x-24">

@@ -31,6 +31,10 @@ const DataContext = createContext({
         interestInfo: {
             "en": "Hover an icon above to show more info!",
             "fr": "Survolez une icône pour en savoir plus!"
+        },
+        goToDesktopPls: {
+            "en": "Switch to desktop for a completely different viewing experience!",
+            "fr": "Passez sur grand écran pour un visionnage complètement différent !"
         }
     }
 });
