@@ -39,7 +39,7 @@ const Highlights = () => {
     const [data, setData] = useState([]);
 
     const { loaded, isReady } = useLoader();
-    
+
     useEffect(() => {
         if (!isPendingA && !isPendingB && data) {
             loaded("Highlights");
@@ -48,12 +48,12 @@ const Highlights = () => {
 
     useEffect(() => {
         if (projects)
-            setData(d => [...d, ...projects])
+            setData(d => [...d, ...projects].sort(compareProjects));
     }, [projects]);
 
     useEffect(() => {
         if (experiences)
-            setData(d => [...d, ...experiences])
+            setData(d => [...d, ...experiences].sort(compareProjects));
     }, [experiences]);
 
     return isReady() && (
@@ -83,7 +83,7 @@ const Highlights = () => {
 
                 {/** Contents */}
                 <div className="tw-space-y-4">
-                    {data && data.sort(compareProjects).map((p, i) => (
+                    {data && data.map((p, i) => (
                         <div key={i} className="tw-mx-2 xl:tw-px-8 tw-px-3"
                             onMouseEnter={() => p.images ? switchMovie(p.images[0]) : clearTheater()}
                             onMouseLeave={() => clearTheater()}>
