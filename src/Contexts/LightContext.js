@@ -3,7 +3,7 @@ import { createContext, useReducer } from "react";
 export const LightContext = createContext(null);
 
 export const LightProvider = ({children}) => {
-    const [lights, dispatch] = useReducer(lightReducer, ["React", "Firebase", "Tailwind"]);
+    const [lights, dispatch] = useReducer(lightReducer, ["React", "Firebase", "Tailwind", "Next.JS"]);
 
     const toggleLight = (name) => {
         dispatch({

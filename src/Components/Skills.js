@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faNode, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
 
@@ -29,7 +29,7 @@ const Skills = () => {
 
     const skills = [
         { name: "React", faIcon: faReact, color: "cyan" },
-        { name: "Node", faIcon: faNode, color: "gray" },
+        { name: "Next.JS", icon: `${process.env.PUBLIC_URL}/assets/icons/nextjs.svg`, color: "gray", nofilter: true },
         { name: "Firebase", icon: `${process.env.PUBLIC_URL}/assets/icons/firebase.svg`, color: "orange", nofilter: true, noname: true },
         { name: "VueJS", faIcon: faVuejs, color: "green" },
         { name: "Tailwind", icon: `${process.env.PUBLIC_URL}/assets/icons/tailwind.svg`, color: "sky", nofilter: true, noname: true }
