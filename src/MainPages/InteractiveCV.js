@@ -1,6 +1,12 @@
 import { useContext, useEffect } from "react";
 
 import { LightProvider } from "../Contexts/LightContext";
+import { TheaterProvider } from "../Contexts/TheaterContext";
+import { LoadProvider } from "../Contexts/LoadContext";
+import DataContext from "../Contexts/DataContext";
+
+import useWindowDimensions from "../Hooks/useWindowDimensions";
+import useCustomParallax from "../Hooks/useCustomParallax";
 
 import Languages from "../Components/Languages";
 import Contacts from "../Components/Contacts";
@@ -10,12 +16,8 @@ import Highlights from "../Components/Highlights";
 import Education from "../Components/Education";
 import StarrySky from "../Components/Deco/StarrySky";
 import Background from "../Components/Deco/Background";
-import useWindowDimensions from "../Hooks/useWindowDimensions";
 import BuildingScreen from "../Components/BuildingScreen";
-import { TheaterProvider } from "../Contexts/TheaterContext";
-import useCustomParallax from "../Hooks/useCustomParallax";
-import { LoadProvider } from "../Contexts/LoadContext";
-import DataContext from "../Contexts/DataContext";
+
 import { language } from "../Tools/lang";
 
 const SideView = () => {
@@ -27,12 +29,12 @@ const SideView = () => {
     const goToDesktopPls = useContext(DataContext).placeholders.goToDesktopPls[language];
 
     return (
-        <div className="xl:tw-h-full xl:tw-pt-16" style={isMobile() ? {} : { ...leftStyle }}>
+        <div className="xl:h-full xl:pt-16" style={isMobile() ? {} : { ...leftStyle }}>
             <Background />
-            {isMobile() && <p className="tw-italic tw-py-5">{goToDesktopPls}</p>}
+            {isMobile() && <p className="italic py-5">{goToDesktopPls}</p>}
             <Contacts />
             <Skills />
-            <div className="tw-flex tw-space-x-24">
+            <div className="flex space-x-24">
                 <Languages />
                 {!isMobile() && <BuildingScreen style={isMobile() ? {} : { ...buildingStyle }} />}
             </div>
@@ -57,15 +59,15 @@ const InteractiveCV = () => {
 
     return (
         <>
-            <div className="tw-px-8 2xl:tw-px-16">
+            <div className="px-8 2xl:px-16">
                 <StarrySky />
             </div>
 
-            <div className="tw-px-8 2xl:tw-px-16 tw-pt-8 tw-bg-gradient-to-b tw-from-slate-900 tw-from-50% tw-via-teal-700 tw-via-85% tw-to-cyan-400">
+            <div className="px-8 2xl:px-16 pt-8 bg-gradient-to-b from-slate-900 from-50% via-teal-700 via-85% to-cyan-400">
                 <LightProvider>
                     <TheaterProvider>
                         <LoadProvider>
-                            <div className="xl:tw-flex tw-relative xl:tw-h-full tw-z-10">
+                            <div className="xl:flex relative xl:h-full z-10">
                                 <SideView />
                                 <Highlights />
                             </div>

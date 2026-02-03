@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { memo } from "react";
+
 import useLoader from "../Hooks/useLoader";
 import useTheaterProjector from "../Hooks/useTheaterProjector";
 import ResizeSVG from "./Base/ResizeSVG";
@@ -6,7 +8,7 @@ import ResizeSVG from "./Base/ResizeSVG";
 const BuildingSVG = memo(() => {
     return (
         <>
-            <ResizeSVG minWidth={1280} width={240} height={400} className="-tw-z-30">
+            <ResizeSVG minWidth={1280} width={240} height={400} className="-z-30">
                 {/** Ad board */}
                 <rect x={0} y={176} width={240} height={400} fill="#132135" />
 
@@ -29,27 +31,27 @@ const BuildingScreen = ({ className, style }) => {
     const { isReady } = useLoader();
 
     const colors = {
-        "pink": "tw-shadow-pink-200",
-        "slate": "tw-shadow-slate-400",
-        "white": "tw-shadow-white",
-        "purple": "tw-shadow-purple-400"
+        "pink": "shadow-pink-200",
+        "slate": "shadow-slate-400",
+        "white": "shadow-white",
+        "purple": "shadow-purple-400"
     }
 
     /** Tailwind loader for preview shadows */
     // eslint-disable-next-line no-unused-vars
     const dummy = (
-        <div className="tw-shadow-pink-200 tw-shadow-slate-400 tw-shadow-white tw-shadow-purple-400" />
+        <div className="shadow-pink-200 shadow-slate-400 shadow-white shadow-purple-400" />
     )
 
     return isReady() && (
-        <div className={`-tw-z-20 ${className}`} style={{ ...style }}>
+        <div className={`-z-20 ${className}`} style={{ ...style }}>
             <BuildingSVG />
 
             {/** Contents of the ad board */}
-            <div className={`-tw-z-30 tw-h-40 tw-w-60 tw-max-h-40 tw-max-w-60 tw-px-2 tw-flex tw-justify-center tw-items-center ${url ? "tw-bg-slate-500" : "tw-bg-slate-800"}`}>
+            <div className={`-z-30 h-40 w-60 max-h-40 max-w-60 px-2 flex justify-center items-center ${url ? "bg-slate-500" : "bg-slate-800"}`}>
                 {url
-                    ? <img src={url} alt={"Project preview"} className={`${color ? `tw-shadow-md ${colors[color]}` : ""}`} />
-                    : <p className="tw-font-bold tw-font-[Meiryo] tw-text-center tw-text-slate-300"><span className="tw-tracking-widest tw-text-4xl">ラーメン</span><br />食べるために働きたい</p>
+                    ? <Image src={url} unoptimized alt={"Project preview"} className={`${color ? `shadow-md ${colors[color]}` : ""}`} />
+                    : <p className="font-bold font-[Meiryo] text-center text-slate-300"><span className="tracking-widest text-4xl">ラーメン</span><br />食べるために働きたい</p>
                     // </div>
                 }
             </div>

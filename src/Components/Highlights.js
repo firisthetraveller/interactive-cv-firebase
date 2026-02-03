@@ -57,44 +57,44 @@ const Highlights = () => {
     }, [experiences]);
 
     return isReady() && (
-        <div className="xl:tw-h-full xl:tw-flex-col tw-z-30">
+        <div className="xl:h-full xl:flex-col z-30">
             {/** Roof */}
-            <div className="trapezoid tw-bg-opacity-100">
-                <Heading className="tw-px-2 xl:tw-px-8" level={2}>{title[language]}</Heading>
+            <div className="trapezoid bg-opacity-100">
+                <Heading className="px-2 xl:px-8" level={2}>{title[language]}</Heading>
             </div>
 
             {/** Contents */}
-            <div className="tw-bg-slate-900 tw-shadow-xl tw-shadow-slate-900 xl:tw-flex xl:tw-h-full tw-py-2">
+            <div className="bg-slate-900 shadow-xl shadow-slate-900 xl:flex xl:h-full py-2">
 
                 {/** Japanese signs on the left */}
                 {!isMobile() &&
-                    <div className="-tw-translate-x-5">
+                    <div className="-translate-x-5">
                         <Sign
-                            className={`tw-bg-orange-800 hover:tw-bg-orange-600 hover:tw-shadow-lg hover:tw-shadow-orange-600 tw-translate-y-32`}
+                            className={`bg-orange-800 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-600 translate-y-32`}
                             text="コIヒI好きのみ" large />
                         <Sign
-                            className={`tw-bg-lime-700 hover:tw-bg-lime-400 hover:tw-shadow-lg hover:tw-shadow-lime-300 tw-translate-y-40`}
+                            className={`bg-lime-700 hover:bg-lime-400 hover:shadow-lg hover:shadow-lime-300 translate-y-40`}
                             text="抹茶でもいい" large />
                         <Sign
-                            className={`tw-bg-teal-700 hover:tw-bg-teal-500 hover:tw-shadow-lg hover:tw-shadow-teal-500 tw-translate-y-72`}
+                            className={`bg-teal-700 hover:bg-teal-500 hover:shadow-lg hover:shadow-teal-500 translate-y-72`}
                             text="ホテルのはずだ" large />
                     </div>
                 }
 
                 {/** Contents */}
-                <div className="tw-space-y-4">
+                <div className="space-y-4">
                     {data && data.map((p, i) => (
-                        <div key={i} className="tw-mx-2 xl:tw-px-8 tw-px-3"
+                        <div key={i} className="mx-2 xl:px-8 px-3"
                             onMouseEnter={() => p.images ? switchMovie(p.images[0]) : clearTheater()}
                             onMouseLeave={() => clearTheater()}>
-                            <div className="tw-flex">
+                            <div className="flex">
                                 <Heading level={3}>{localeText(p.title)}</Heading>
-                                {p.url && <a href={p.url} target="_blank" rel="noreferrer"><FontAwesomeIcon className="tw-mx-2" icon={faArrowUpRightFromSquare} /></a>}
-                                {p.github && <a href={p.github} target="_blank" rel="noreferrer"><FontAwesomeIcon className="tw-mx-2" icon={faGithub} /></a>}
+                                {p.url && <a href={p.url} target="_blank" rel="noreferrer"><FontAwesomeIcon className="mx-2" icon={faArrowUpRightFromSquare} /></a>}
+                                {p.github && <a href={p.github} target="_blank" rel="noreferrer"><FontAwesomeIcon className="mx-2" icon={faGithub} /></a>}
                             </div>
                             <p>{p.date.includes("/") ? locateDateString(new Date(p.date)) : p.date}{p.duration && ` - ${localeText(p.duration)}`}</p>
-                            {p.location && <p className="tw-text-sm">{localeText(p.location)}</p>}
-                            <p className="tw-italic tw-text-sm">
+                            {p.location && <p className="text-sm">{localeText(p.location)}</p>}
+                            <p className="italic text-sm">
                                 {p.description[language].split(". ").map((sentence, i) => (
                                     <span key={i}>
                                         {sentence.trim()}
@@ -104,7 +104,7 @@ const Highlights = () => {
                             </p>
 
                             {/* Tags */}
-                            <div className="tw-flex tw-flex-wrap">
+                            <div className="flex flex-wrap">
                                 {p.tags && p.tags.map((t, i) =>
                                     <HoverableTag key={i} name={t} />
                                 )}

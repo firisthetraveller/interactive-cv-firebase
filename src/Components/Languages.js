@@ -16,10 +16,10 @@ const LanguageDisplay = React.memo(({ name, level, certification }) => {
     return (
         <>
             {certification
-                ? <div className="tw-my-1 tw-mx-2" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <p>{name} {level} {showCert && <motion.span className="tw-italic tw-text-sm tw-px-1 xl:tw-text-yellow-300 xl:text-shadow-light xl:pixel-font" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>{certification}</motion.span>}</p>
+                ? <div className="my-1 mx-2" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+                    <p>{name} {level} {showCert && <motion.span className="italic text-sm px-1 xl:text-yellow-300 xl:text-shadow-light xl:pixel-font" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>{certification}</motion.span>}</p>
                 </div>
-                : <div className="tw-my-1 tw-mx-2">
+                : <div className="my-1 mx-2">
                     <p>{name} {level}</p>
                 </div>
             }
@@ -41,10 +41,10 @@ const Languages = () => {
     
 
     return isReady() && (
-        <div className="tw-my-2 xl:tw-pl-8">
+        <div className="my-2 xl:pl-8">
             <Heading level={2}>{title[language]}</Heading>
 
-            <div className="xl:tw-pl-1 xl:tw-rounded-md xl:tw-bg-[#020617] xl:tw-m-2 xl:tw-w-[270px]">
+            <div className="xl:pl-1 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-[270px]">
                 {languages && languages.map((d, i) =>
                     <LanguageDisplay key={i} name={d.name[language]} level={localeText(d.level[language])} certification={d.certification} />
                 )}

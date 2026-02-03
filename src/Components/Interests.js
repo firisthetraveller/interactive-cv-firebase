@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -27,21 +27,19 @@ const Interests = () => {
         }
     }, [isPending, data, loaded]);
 
-    useEffect(() => console.log(infoLines), [infoLines]);
-
     return isReady() && (
-        <div className="tw-my-2 xl:tw-pl-8">
+        <div className="my-2 xl:pl-8">
             <Heading level={2}>{title[language]}</Heading>
-            <div className="tw-text-white">
-                <div className="tw-flex tw-flex-wrap">
+            <div className="text-white">
+                <div className="flex flex-wrap">
                     {data && data.map((d, i) =>
                         <Icon key={i} data={d} onHover={() => setInfoLines(d.info[language])} onExit={handleExit} />
                     )}
                 </div>
-                <div className="xl:tw-pl-3 xl:tw-rounded-md xl:tw-bg-[#020617] xl:tw-m-2 xl:tw-w-[580px]">
+                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-[580px]">
                     {infoLines.length > 0
                         ? <motion.p
-                            className="xl:tw-text-yellow-300 xl:text-shadow-light xl:pixel-font"
+                            className="xl:text-yellow-300 xl:text-shadow-light xl:pixel-font"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
@@ -50,7 +48,7 @@ const Interests = () => {
                         </motion.p>
                         :
                         <div>
-                            <p className="tw-text-slate-400 tw-italic">
+                            <p className="text-slate-400 italic">
                                 {placeholder[language]}
                             </p><br /><p></p>
                         </div>
@@ -65,10 +63,10 @@ const Icon = ({ data, onHover, onExit }) => {
     const icons = useContext(IconContext);
 
     return (
-        <div className="tw-flex tw-items-center" onMouseEnter={onHover} onMouseLeave={onExit} >
-            <FontAwesomeIcon className={`tw-m-2`} size={"2x"} icon={icons[data.id]} aria-label={`icon for ${data.icon}`} />
+        <div className="flex items-center" onMouseEnter={onHover} onMouseLeave={onExit} >
+            <FontAwesomeIcon className={`m-2`} size={"2x"} icon={icons[data.id]} aria-label={`icon for ${data.icon}`} />
 
-            <p className="tw-mx-1">{data.name[language]}</p>
+            <p className="mx-1">{data.name[language]}</p>
         </div>
     );
 }

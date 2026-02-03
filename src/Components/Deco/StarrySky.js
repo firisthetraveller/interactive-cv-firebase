@@ -13,7 +13,7 @@ export default function StarrySky () {
     const {width, height} = useWindowDimensions();
 
     return (
-        <ResizeSVG className={"tw-z-0"} width={width * 0.9} height={height * 0.7}>
+        <ResizeSVG className={"z-0"} width={width * 0.9} height={height * 0.7}>
             {/* Stars */}
             <defs>
                 <filter id="blur">

@@ -21,7 +21,7 @@ const HoverableTag = ({ name }) => {
 
     return (
         <div ref={ref}>
-            <ResizeSVG width={divWidth} height={34} minWidth={1280} className="tw-pointer-events-none">
+            <ResizeSVG width={divWidth} height={34} minWidth={1280} className="pointer-events-none">
                 {/** TODO: Curtains */}
 
                 {/** This is the guardrail */}
@@ -31,10 +31,10 @@ const HoverableTag = ({ name }) => {
 
             {/** The window lighting up and turning off */}
             <div className={`
-                    tw-my-0.5 tw-mx-1 tw-p-1 tw-cursor-pointer
+                    my-0.5 mx-1 p-1 cursor-pointer
                     ${isActiveLight(name)
-                    ? "tw-bg-yellow-100 tw-shadow-lg tw-shadow-yellow-200 tw-text-slate-800"
-                    : "tw-bg-slate-700 hover:tw-bg-slate-500"
+                    ? "bg-yellow-100 shadow-lg shadow-yellow-200 text-slate-800"
+                    : "bg-slate-700 hover:bg-slate-500"
                 }`}
                 onClick={() => toggleLight(name)}>
                 {name}

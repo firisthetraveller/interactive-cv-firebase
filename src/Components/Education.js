@@ -1,12 +1,15 @@
+import { useContext, useEffect } from "react";
+
 import useWindowDimensions from "../Hooks/useWindowDimensions.js";
+import useLoader from "../Hooks/useLoader.js";
+import useCollection from "../Hooks/useCollection.js";
+import DataContext from "../Contexts/DataContext.js";
+
 import Heading from "./Base/Heading";
 import HoverableTag from "./Base/HoverableTag.js";
 import Sign from "./Deco/Sign.js";
+
 import { language } from "../Tools/lang.js";
-import useCollection from "../Hooks/useCollection.js";
-import { useContext, useEffect } from "react";
-import DataContext from "../Contexts/DataContext.js";
-import useLoader from "../Hooks/useLoader.js";
 
 const Education = () => {
     const { isMobile } = useWindowDimensions();
@@ -21,33 +24,33 @@ const Education = () => {
     }, [isPending, data, loaded]);
 
     return isReady() && (
-        <div className="xl:tw-h-1/2 max-xl:tw-pb-6 xl:tw-flex">
+        <div className="xl:h-1/2 max-xl:pb-6 xl:flex">
             {/** Left side Japanese text */}
             {!isMobile() && 
-                <div className="tw-translate-x-5 tw-translate-y-10">
+                <div className="translate-x-5 translate-y-10">
                     <Sign
-                        className={`tw-bg-green-800 hover:tw-bg-green-600 hover:tw-shadow-green-600 hover:tw-shadow-lg tw-shadow`}
+                        className={`bg-green-800 hover:bg-green-600 hover:shadow-green-600 hover:shadow-lg shadow`}
                         text="初心者歓迎" />
                 </div>
             }
 
             {/** Building */}
-            <div className="xl:tw-flex-1">
+            <div className="xl:flex-1">
                 
                 {/** Roof */}
-                <div className="xl:tw-bg-opacity-100 xl:tw-pl-2 xl:trapezoid xl:tw-w-[752px]">
-                    <Heading className="xl:tw-pl-8" level={2}>{title[language]}</Heading>
+                <div className="xl:bg-opacity-100 xl:pl-2 xl:trapezoid xl:w-[752px]">
+                    <Heading className="xl:pl-8" level={2}>{title[language]}</Heading>
                 </div>
 
                 {/** Contents */}
-                <div className="xl:tw-bg-slate-800 xl:tw-w-[752px] xl:tw-h-[360px] xl:tw-flex xl:tw-flex-wrap xl:tw-pl-8 xl:tw-pb-8 xl:tw-shadow xl:tw-shadow-slate-800">
+                <div className="xl:bg-slate-800 xl:w-[752px] xl:h-[360px] xl:flex xl:flex-wrap xl:pl-8 xl:pb-8 xl:shadow xl:shadow-slate-800">
                     {data && data.map(d =>
-                        <div key={d.id} className="tw-pt-2 tw-px-2">
+                        <div key={d.id} className="pt-2 px-2">
                             <Heading level={3}>{d.degree[language]}</Heading>
                             {d.specialty && <Heading level={3}>{d.specialty[language]}</Heading>}
-                            <p className="tw-text-sm">{d.schoolName}</p>
-                            <p className="tw-text-sm">{d.years}</p>
-                            <div className="tw-flex tw-flex-wrap">
+                            <p className="text-sm">{d.schoolName}</p>
+                            <p className="text-sm">{d.years}</p>
+                            <div className="flex flex-wrap">
                                 {d.skills && d.skills.map((s, i) => <HoverableTag key={i} name={s} />)}
                             </div>
                         </div>

@@ -76,7 +76,7 @@ export default function Background() {
     ), []);
 
     return isReady() && (
-        <ResizeSVG className="-tw-z-10 tw-pl-8 tw-translate-y-2" height={700} width={800} minWidth={1280}>
+        <ResizeSVG className="-z-10 pl-8 translate-y-2" height={700} width={800} minWidth={1280}>
             {svg}
         </ResizeSVG>
     )
