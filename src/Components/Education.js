@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 
-import useWindowDimensions from "../Hooks/useWindowDimensions.js";
+import useWindowProperties from "../Hooks/useWindowProperties.js";
 import useLoader from "../Hooks/useLoader.js";
 import useCollection from "../Hooks/useCollection.js";
 import DataContext from "../Contexts/DataContext.js";
@@ -12,7 +12,7 @@ import Sign from "./Deco/Sign.js";
 import { language } from "../Tools/lang.js";
 
 const Education = () => {
-    const { isMobile } = useWindowDimensions();
+    const { isMobile } = useWindowProperties();
     const title = useContext(DataContext).sections.education;
     const { data, isPending, error } = useCollection("education");
     const { loaded, isReady } = useLoader();
@@ -44,7 +44,7 @@ const Education = () => {
 
                 {/** Contents */}
                 <div className="xl:bg-slate-800 xl:w-[752px] xl:h-[360px] xl:flex xl:flex-wrap xl:pl-8 xl:pb-8 xl:shadow xl:shadow-slate-800">
-                    {data && data.map(d =>
+                    {data.map(d =>
                         <div key={d.id} className="pt-2 px-2">
                             <Heading level={3}>{d.degree[language]}</Heading>
                             {d.specialty && <Heading level={3}>{d.specialty[language]}</Heading>}

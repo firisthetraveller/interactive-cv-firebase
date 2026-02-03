@@ -32,7 +32,7 @@ const Interests = () => {
             <Heading level={2}>{title[language]}</Heading>
             <div className="text-white">
                 <div className="flex flex-wrap">
-                    {data && data.map((d, i) =>
+                    {data.map((d, i) =>
                         <Icon key={i} data={d} onHover={() => setInfoLines(d.info[language])} onExit={handleExit} />
                     )}
                 </div>

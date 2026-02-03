@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faNode, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
 
@@ -13,6 +14,7 @@ import useLoader from "../Hooks/useLoader";
 
 import firebaseLogo from "../../public/assets/icons/firebase.svg";
 import tailwindLogo from "../../public/assets/icons/tailwind.svg";
+import nextLogo from "../../public/assets/icons/nextjs.svg";
 
 const Icon = ({ name, icon, faIcon, noname = false }) => {
     const { toggleLight } = useLights();
@@ -32,7 +34,7 @@ const Skills = () => {
 
     const skills = [
         { name: "React", faIcon: faReact, color: "cyan" },
-        { name: "Node", faIcon: faNode, color: "gray" },
+        { name: "Next.JS", icon: nextLogo, color: "gray", nofilter: true},
         { name: "Firebase", icon: firebaseLogo, color: "orange", nofilter: true, noname: true },
         { name: "VueJS", faIcon: faVuejs, color: "green" },
         { name: "Tailwind", icon: tailwindLogo, color: "sky", nofilter: true, noname: true }

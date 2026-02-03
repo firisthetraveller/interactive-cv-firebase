@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { memo } from "react";
 
 import useLoader from "../Hooks/useLoader";
@@ -50,7 +49,7 @@ const BuildingScreen = ({ className, style }) => {
             {/** Contents of the ad board */}
             <div className={`-z-30 h-40 w-60 max-h-40 max-w-60 px-2 flex justify-center items-center ${url ? "bg-slate-500" : "bg-slate-800"}`}>
                 {url
-                    ? <Image src={url} unoptimized alt={"Project preview"} className={`${color ? `shadow-md ${colors[color]}` : ""}`} />
+                    ? <img src={url} alt={"Project preview"} className={`${color ? `shadow-md ${colors[color]}` : ""}`} />
                     : <p className="font-bold font-[Meiryo] text-center text-slate-300"><span className="tracking-widest text-4xl">ラーメン</span><br />食べるために働きたい</p>
                     // </div>
                 }

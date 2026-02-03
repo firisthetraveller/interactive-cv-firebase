@@ -6,6 +6,7 @@ export const LoadProvider = ({ children }) => {
     const [state, dispatch] = useReducer(loadReducer, new Set());
 
     const loaded = (value) => {
+        if (state.has(value)) return;
         dispatch({ type: "added", value });
     }
 

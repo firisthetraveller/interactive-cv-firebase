@@ -17,7 +17,7 @@ const HoverableTag = ({ name }) => {
         if (!divWidth && ref.current) {
             setDivWidth(Math.floor(ref.current.getBoundingClientRect().width));
         }
-    }, [ref, divWidth]);
+    }, [ref]);
 
     return (
         <div ref={ref}>

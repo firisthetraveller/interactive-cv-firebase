@@ -1,4 +1,4 @@
-import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import useWindowProperties from "../../Hooks/useWindowProperties";
 import ResizeSVG from "../Base/ResizeSVG";
 
 const stars = Array.from({ length: 30 }, () => {
@@ -10,7 +10,7 @@ const stars = Array.from({ length: 30 }, () => {
 });
 
 export default function StarrySky () {
-    const {width, height} = useWindowDimensions();
+    const {width, height} = useWindowProperties();
 
     return (
         <ResizeSVG className={"z-0"} width={width * 0.9} height={height * 0.7}>

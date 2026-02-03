@@ -1,11 +1,11 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { LightProvider } from "../Contexts/LightContext";
 import { TheaterProvider } from "../Contexts/TheaterContext";
 import { LoadProvider } from "../Contexts/LoadContext";
 import DataContext from "../Contexts/DataContext";
 
-import useWindowDimensions from "../Hooks/useWindowDimensions";
+import useWindowProperties from "../Hooks/useWindowProperties";
 import useCustomParallax from "../Hooks/useCustomParallax";
 
 import Languages from "../Components/Languages";
@@ -21,7 +21,7 @@ import BuildingScreen from "../Components/BuildingScreen";
 import { language } from "../Tools/lang";
 
 const SideView = () => {
-    const { isMobile } = useWindowDimensions();
+    const { isMobile } = useWindowProperties();
 
     const { style: leftStyle } = useCustomParallax(0.55);
     const { style: buildingStyle } = useCustomParallax(0.1);
@@ -45,18 +45,6 @@ const SideView = () => {
 }
 
 const InteractiveCV = () => {
-    useEffect(() => {
-        const backToTop = () => {
-            if (window.innerWidth >= 1280) {
-                window.scrollTo(0, 0);
-            }
-        };
-
-        window.addEventListener('resize', backToTop);
-
-        return () => window.removeEventListener('resize', backToTop);
-    })
-
     return (
         <>
             <div className="px-8 2xl:px-16">
