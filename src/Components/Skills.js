@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faNode, faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 import { faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
@@ -23,7 +22,7 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
         <div className="flex items-center cursor-pointer min-h-11" onClick={() => toggleLight(name)}>
             {icon && <Image className="m-2" unoptimized src={icon} alt={name} width={noname ? 32 * 3 : 32} height={32} aria-label={`icon for ${icon}`} />}
             {faIcon && <FontAwesomeIcon icon={faIcon} className="m-2" size="2x" />}
-            {!noname && <p className="mx-1">{name}</p>}
+            {!noname && <p className="mx-2">{name}</p>}
         </div>
     )
 }
