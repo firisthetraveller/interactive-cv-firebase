@@ -1,27 +1,18 @@
-import { useState, useEffect } from 'react';
+import useWindowProperties from './useWindowProperties';
 
 const useCustomParallax = (speed, bgImage = null) => {
-    const [offset, setOffset] = useState(0);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            setOffset(window.scrollY * speed);
-        };
-
-        window.addEventListener('scroll', handleScroll);
-        return () => window.removeEventListener('scroll', handleScroll);
-    }, [offset, speed]);
+    const { scrollY } = useWindowProperties();
 
     return bgImage
         ? {
             style: {
                 backgroundImage: `url(${bgImage})`,
-                transform: `translateY(${offset}px)`,
+                transform: `translateY(${scrollY * speed}px)`,
             },
         }
         : {
             style: {
-                transform: `translateY(${offset}px)`,
+                transform: `translateY(${scrollY * speed}px)`,
             },
         };
 };

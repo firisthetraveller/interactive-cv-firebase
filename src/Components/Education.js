@@ -1,4 +1,4 @@
-import useWindowDimensions from "../Hooks/useWindowDimensions.js";
+import useWindowDimensions from "../Hooks/useWindowProperties.js";
 import Heading from "./Base/Heading";
 import HoverableTag from "./Base/HoverableTag.js";
 import Sign from "./Deco/Sign.js";

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import { LightProvider } from "../Contexts/LightContext";
 
@@ -10,7 +10,7 @@ import Highlights from "../Components/Highlights";
 import Education from "../Components/Education";
 import StarrySky from "../Components/Deco/StarrySky";
 import Background from "../Components/Deco/Background";
-import useWindowDimensions from "../Hooks/useWindowDimensions";
+import useWindowDimensions from "../Hooks/useWindowProperties";
 import BuildingScreen from "../Components/BuildingScreen";
 import { TheaterProvider } from "../Contexts/TheaterContext";
 import useCustomParallax from "../Hooks/useCustomParallax";
@@ -43,18 +43,6 @@ const SideView = () => {
 }
 
 const InteractiveCV = () => {
-    useEffect(() => {
-        const backToTop = () => {
-            if (window.innerWidth >= 1280) {
-                window.scrollTo(0, 0);
-            }
-        };
-
-        window.addEventListener('resize', backToTop);
-
-        return () => window.removeEventListener('resize', backToTop);
-    })
-
     return (
         <>
             <div className="tw-px-8 2xl:tw-px-16">

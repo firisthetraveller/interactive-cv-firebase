@@ -1,4 +1,4 @@
-import useWindowDimensions from "../../Hooks/useWindowDimensions";
+import useWindowDimensions from "../../Hooks/useWindowProperties";
 import ResizeSVG from "../Base/ResizeSVG";
 
 const stars = Array.from({ length: 30 }, () => {

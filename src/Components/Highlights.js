@@ -4,7 +4,7 @@ import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import Heading from "./Base/Heading";
 import HoverableTag from "./Base/HoverableTag.js";
-import useWindowDimensions from "../Hooks/useWindowDimensions.js";
+import useWindowDimensions from "../Hooks/useWindowProperties.js";
 import Sign from "./Deco/Sign.js";
 import useTheaterProjector from "../Hooks/useTheaterProjector.js";
 import { useContext, useEffect, useState } from "react";
