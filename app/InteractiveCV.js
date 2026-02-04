@@ -51,7 +51,7 @@ const InteractiveCV = () => {
                 <StarrySky />
             </div>
 
-            <div className="px-8 2xl:px-16 pt-8 bg-gradient-to-b from-slate-900 from-50% via-teal-700 via-85% to-cyan-400">
+            <div className="px-8 2xl:px-16 pt-8 bg-linear-to-b from-slate-900 from-50% via-teal-700 via-85% to-cyan-400">
                 <LightProvider>
                     <TheaterProvider>
                         <LoadProvider>

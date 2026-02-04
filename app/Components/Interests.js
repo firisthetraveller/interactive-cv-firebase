@@ -36,7 +36,7 @@ const Interests = () => {
                         <Icon key={i} data={d} onHover={() => setInfoLines(d.info[language])} onExit={handleExit} />
                     )}
                 </div>
-                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-[580px]">
+                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-145">
                     {infoLines.length > 0
                         ? <motion.p
                             className="xl:text-yellow-300 xl:text-shadow-light xl:pixel-font"

@@ -38,12 +38,12 @@ const Education = () => {
             <div className="xl:flex-1">
                 
                 {/** Roof */}
-                <div className="xl:bg-opacity-100 xl:pl-2 xl:trapezoid xl:w-[752px]">
+                <div className="xl:pl-2 xl:trapezoid xl:w-188">
                     <Heading className="xl:pl-8" level={2}>{title[language]}</Heading>
                 </div>
 
                 {/** Contents */}
-                <div className="xl:bg-slate-800 xl:w-[752px] xl:h-[360px] xl:flex xl:flex-wrap xl:pl-8 xl:pb-8 xl:shadow xl:shadow-slate-800">
+                <div className="xl:bg-slate-800 xl:w-188 xl:h-90 xl:flex xl:flex-wrap xl:pl-8 xl:pb-8 xl:shadow xl:shadow-slate-800">
                     {data.map(d =>
                         <div key={d.id} className="pt-2 px-2">
                             <Heading level={3}>{d.degree[language]}</Heading>

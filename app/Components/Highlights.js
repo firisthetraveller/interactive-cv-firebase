@@ -29,7 +29,7 @@ const Highlights = () => {
     return isReady() && (
         <div className="xl:h-full xl:flex-col z-30">
             {/** Roof */}
-            <div className="trapezoid bg-opacity-100">
+            <div className="trapezoid">
                 <Heading className="px-2 xl:px-8" level={2}>{title[language]}</Heading>
             </div>
 

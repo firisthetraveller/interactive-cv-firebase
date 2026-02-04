@@ -51,7 +51,7 @@ body {
 }
 
 .trapezoid {
-  border-bottom: 32px solid rgb(100 116 139 / var(--bg-opacity));
+  border-bottom: 32px solid rgb(100 116 139 / 100);
   /* #64748b */
   border-left: 28px solid transparent;
   border-right: 24px solid transparent;
@@ -60,7 +60,7 @@ body {
 
 @media (min-width: 1280px) {
   .xl\:trapezoid {
-    border-bottom: 28px solid rgb(100 116 139 / var(--bg-opacity));
+    border-bottom: 28px solid rgb(100 116 139 / 100);
     /* #54647b */
     border-left: 24px solid transparent;
     height: 0;

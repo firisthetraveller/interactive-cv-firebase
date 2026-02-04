@@ -44,7 +44,7 @@ const Languages = () => {
         <div className="my-2 xl:pl-8">
             <Heading level={2}>{title[language]}</Heading>
 
-            <div className="xl:pl-1 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-[270px]">
+            <div className="xl:pl-1 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-67.5">
                 {languages && languages.map((d, i) =>
                     <LanguageDisplay key={i} name={d.name[language]} level={localeText(d.level[language])} certification={d.certification} />
                 )}
