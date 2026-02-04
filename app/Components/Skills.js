@@ -14,6 +14,7 @@ import useLoader from "../Hooks/useLoader";
 import firebaseLogo from "../../public/assets/icons/firebase.svg";
 import tailwindLogo from "../../public/assets/icons/tailwind.svg";
 import nextLogo from "../../public/assets/icons/nextjs.svg";
+import d3Logo from "../../public/assets/icons/d3.svg";
 
 const Icon = ({ name, icon, faIcon, noname = false }) => {
     const { toggleLight } = useLights();
@@ -35,7 +36,7 @@ const Skills = () => {
         { name: "React", faIcon: faReact, color: "cyan" },
         { name: "Next.JS", icon: nextLogo, color: "gray", nofilter: true},
         { name: "Firebase", icon: firebaseLogo, color: "orange", nofilter: true, noname: true },
-        { name: "VueJS", faIcon: faVuejs, color: "green" },
+        { name: "D3", icon: d3Logo, color: "gray", nofilter: true },
         { name: "Tailwind", icon: tailwindLogo, color: "sky", nofilter: true, noname: true }
     ]
 
