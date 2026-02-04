@@ -1,4 +1,4 @@
 :HL["/_next/static/chunks/d9f7189c289fc209.css","style"]
 :HC["/",""]
 :HL["https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,200&family=Poppins:wght@400;600;700;800&display=swap","style"]
-0:{"buildId":"aqH_Srk2IJEicoxozIULd","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"_wL6LdHofMyJku1J_JORr","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
