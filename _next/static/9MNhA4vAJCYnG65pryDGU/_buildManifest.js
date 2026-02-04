@@ -1,7 +1,12 @@
 self.__BUILD_MANIFEST = {
   "__rewrites": {
     "afterFiles": [],
-    "beforeFiles": [],
+    "beforeFiles": [
+      {
+        "source": "/interactive-cv-firebase//_next/:path+",
+        "destination": "/interactive-cv-firebase/_next/:path+"
+      }
+    ],
     "fallback": []
   },
   "sortedPages": [
