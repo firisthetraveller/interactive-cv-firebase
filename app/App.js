@@ -1,4 +1,4 @@
-import InteractiveCV from './MainPages/InteractiveCV';
+import InteractiveCV from './InteractiveCV';
 
 import './App.css';
 import Footer from './Components/Base/Footer';

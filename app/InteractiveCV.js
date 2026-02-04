@@ -1,24 +1,24 @@
 import { useContext } from "react";
 
-import { LightProvider } from "../Contexts/LightContext";
-import { TheaterProvider } from "../Contexts/TheaterContext";
-import { LoadProvider } from "../Contexts/LoadContext";
-import DataContext from "../Contexts/DataContext";
+import { LightProvider } from "./Contexts/LightContext";
+import { TheaterProvider } from "./Contexts/TheaterContext";
+import { LoadProvider } from "./Contexts/LoadContext";
+import DataContext from "./Contexts/DataContext";
 
-import useWindowProperties from "../Hooks/useWindowProperties";
-import useCustomParallax from "../Hooks/useCustomParallax";
+import useWindowProperties from "./Hooks/useWindowProperties";
+import useCustomParallax from "./Hooks/useCustomParallax";
 
-import Languages from "../Components/Languages";
-import Contacts from "../Components/Contacts";
-import Skills from "../Components/Skills";
-import Interests from "../Components/Interests";
-import Highlights from "../Components/Highlights";
-import Education from "../Components/Education";
-import StarrySky from "../Components/Deco/StarrySky";
-import Background from "../Components/Deco/Background";
-import BuildingScreen from "../Components/BuildingScreen";
+import Languages from "./Components/Languages";
+import Contacts from "./Components/Contacts";
+import Skills from "./Components/Skills";
+import Interests from "./Components/Interests";
+import Highlights from "./Components/Highlights";
+import Education from "./Components/Education";
+import StarrySky from "./Components/Deco/StarrySky";
+import Background from "./Components/Deco/Background";
+import BuildingScreen from "./Components/BuildingScreen";
 
-import { language } from "../Tools/lang";
+import { language } from "./Tools/lang";
 
 const SideView = () => {
     const { isMobile } = useWindowProperties();

@@ -5,7 +5,7 @@ import useCollection from "../Hooks/useCollection.js";
 import useLoader from "../Hooks/useLoader.js";
 import DataContext from "../Contexts/DataContext.js";
 
-import Heading from "./Base/Heading";
+import Heading from "./Base/Heading.js";
 import Sign from "./Deco/Sign.js";
 import HighlightBuilding from "./Deco/HighlightBuilding.js";
 

@@ -5,7 +5,7 @@ import useLoader from "../Hooks/useLoader.js";
 import useCollection from "../Hooks/useCollection.js";
 import DataContext from "../Contexts/DataContext.js";
 
-import Heading from "./Base/Heading";
+import Heading from "./Base/Heading.js";
 import HoverableTag from "./Base/HoverableTag.js";
 import Sign from "./Deco/Sign.js";
 
