@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function getWindowProperties() {
+function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
@@ -9,11 +9,11 @@ function getWindowProperties() {
 }
 
 export default function useWindowProperties() {
-  const [windowProperties, setWindowProperties] = useState(getWindowProperties());
+  const [windowProperties, setWindowProperties] = useState(getWindowDimensions());
 
   useEffect(() => {
     function handleResize() {
-      setWindowProperties(p => ({ ...p, ...getWindowProperties() }));
+      setWindowProperties(p => ({ ...p, ...getWindowDimensions() }));
 
       // Back to top
       if (window.innerWidth >= 1280) {
@@ -21,13 +21,12 @@ export default function useWindowProperties() {
       }
     }
 
-    function handleScroll() {
+    const handleScroll = () => {
       setWindowProperties(p => ({ ...p, scrollY: window.scrollY }));
-    }
+    };
 
     window.addEventListener('resize', handleResize);
     window.addEventListener('scroll', handleScroll);
-
     return () => {
       window.removeEventListener('resize', handleResize);
       window.removeEventListener('scroll', handleScroll);
