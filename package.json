@@ -19,8 +19,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "npx serve@latest ./build",
-    "predeploy": "next build",
-    "deploy": "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "echo 'true' > ./build/.nojekyll && gh-pages -d build -t"
   },
   "eslintConfig": {
     "extends": [
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.1.18",
-    "gh-pages": "^6.2.0",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.1.18",
     "typescript": "5.9.3"
   }
