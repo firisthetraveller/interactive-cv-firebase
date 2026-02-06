@@ -1,18 +1,7 @@
-import { motion } from 'framer-motion';
-
 import ResizeSVG from "../Base/ResizeSVG";
 import useLoader from '../../Hooks/useLoader';
 import Smoke from './Smoke';
-
-const Bird = ({ position }) => {
-    return (
-        <>
-            <circle cx={position.x} cy={position.y} r={6} fill="black" />
-            <circle cx={position.x + 1} cy={position.y - 6} r={3} fill="black" />
-            <motion.circle initial={{ cx: position.x + 4 }} animate={{ cx: position.x + 2 }} r={1} cy={position.y - 5} transition={{ delay: Math.random() * 20, duration: 0.8, ease: "easeIn", repeatDelay: Math.random() * 20, repeat: Infinity }} fill="gray" />
-        </>
-    );
-}
+import Bird from "./Bird";
 
 export default function Background() {
     const { isReady } = useLoader();
@@ -20,18 +9,8 @@ export default function Background() {
     return isReady() && (
         <ResizeSVG className="-z-10 pl-8 translate-y-2" height={700} width={800} minWidth={1280}>
             <g>
-                {/** First horizontal bar */}
-                <line x1={-100} y1={191} x2={800} y2={191} stroke="black" strokeWidth={4} />
-                <line x1={630} y1={189} x2={680} y2={189} stroke="lightgray" strokeWidth={1} />
-
-                {/** Birds */}
-                <Bird position={{ x: 586, y: 185 }} />
-                <Bird position={{ x: 570, y: 185 }} />
+                {/** Bird */}
                 <Bird position={{ x: 680, y: 139 }} />
-
-                {/** Second horizontal bar */}
-                <line x1={-100} y1={208} x2={800} y2={208} stroke="black" strokeWidth={4} />
-                <line x1={610} y1={206} x2={660} y2={206} stroke="lightgray" strokeWidth={1} />
 
                 {/** First vertical bar */}
                 <line x1={50} y1={144} x2={50} y2={700} stroke="black" strokeWidth={15} />

@@ -96,3 +96,18 @@ body {
 .text-shadow-light:hover {
   text-shadow: #FF9 0 0 40px;
 }
+
+.bird-beak {
+  animation: slide-beak 10s infinite;
+  animation-timing-function: ease-in;
+}
+
+@keyframes slide-beak {
+  40% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-2);
+  }
+}
