@@ -2,6 +2,8 @@ import { createContext, useReducer } from "react";
 
 export const LightContext = createContext(null);
 
+const permanentLights = ["Mentoring", "Active listening", "Code review", "Empathy", "Problem solving"];
+
 export const LightProvider = ({children}) => {
     const [lights, dispatch] = useReducer(lightReducer, ["React", "Firebase", "Tailwind", "Next.JS", "D3"]);
 
@@ -16,8 +18,12 @@ export const LightProvider = ({children}) => {
         return lights.includes(name);
     }
 
+     const isPermanentLight = (name) => {
+        return permanentLights.includes(name);
+    }
+
     return (
-        <LightContext.Provider value={{...lights, toggleLight, isActiveLight}}>
+        <LightContext.Provider value={{...lights, toggleLight, isActiveLight, isPermanentLight}}>
             {children}
         </LightContext.Provider>
     )

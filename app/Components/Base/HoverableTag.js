@@ -9,7 +9,7 @@ import ResizeSVG from "./ResizeSVG";
  * @returns 
  */
 const HoverableTag = ({ name }) => {
-    const { toggleLight, isActiveLight } = useLights();
+    const { toggleLight, isActiveLight, isPermanentLight } = useLights();
     const ref = createRef();
     const [divWidth, setDivWidth] = useState(null);
 
@@ -26,15 +26,17 @@ const HoverableTag = ({ name }) => {
 
                 {/** This is the guardrail */}
                 <line x1={0} y1={28} x2={divWidth} y2={28} strokeWidth={1} stroke="#475569" />
-                {Array.from({ length: 18 }, (e, i) => i + 1).map(i => <line key={i} x1={4 + 4 * i} y1={28} x2={4 + 4 * i} y2={34} strokeWidth={1} strokeOpacity={0.4} stroke="#475569" />)}
+                {Array.from({ length: divWidth / 4 }, (e, i) => i + 1).map(i => <line key={i} x1={4 + 4 * i} y1={28} x2={4 + 4 * i} y2={34} strokeWidth={1} strokeOpacity={0.4} stroke="#475569" />)}
             </ResizeSVG>
 
             {/** The window lighting up and turning off */}
             <div className={`
                     my-0.5 mx-1 p-1 cursor-pointer
-                    ${isActiveLight(name)
-                    ? "bg-yellow-100 shadow-lg shadow-yellow-200 text-slate-800"
-                    : "bg-slate-700 hover:bg-slate-500"
+                    ${isPermanentLight(name)
+                    ? "bg-teal-100 shadow-lg shadow-teal-200 text-slate-800"
+                    : (isActiveLight(name)
+                        ? "bg-yellow-100 shadow-lg shadow-yellow-200 text-slate-800"
+                        : "bg-slate-700 hover:bg-slate-500")
                 }`}
                 onClick={() => toggleLight(name)}>
                 {name}
