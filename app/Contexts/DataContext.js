@@ -23,8 +23,8 @@ const DataContext = createContext({
             "en": "Languages"
         },
         role: {
-            "fr": "Développeur front-end",
-            "en": "Frontend Web Developer"
+            "fr": "Développer web fullstack",
+            "en": "Fullstack Web Developer"
         }
     },
     placeholders: {
