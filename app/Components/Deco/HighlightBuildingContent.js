@@ -25,7 +25,7 @@ const compareProjects = (p1, p2) => {
     return p1.priority < p2.priority;
 }
 
-const HighlightBuilding = ({ projects, experiences }) => {
+const HighlightBuildingContent = ({ projects = [], experiences = []}) => {
     const { clearTheater, switchMovie } = useTheaterProjector();
     const data = [...projects, ...experiences].sort(compareProjects);
 
@@ -67,4 +67,4 @@ const HighlightBuilding = ({ projects, experiences }) => {
 }
 
 
-export default HighlightBuilding;
+export default HighlightBuildingContent;

@@ -28,13 +28,13 @@ const SideView = () => {
     useEffect(() => {
         if (!ready || !sideRef.current) return;
 
-        const sideRect = sideRef.current.getBoundingClientRect();
-        const highlightsEl = document.getElementById("highlights-root");
+        const leftSideRect = sideRef.current.getBoundingClientRect();
+        const rightSideElement = document.getElementById("highlights-root");
 
-        if (!highlightsEl) return;
+        if (!rightSideElement) return;
 
-        const highlightsRect = highlightsEl.getBoundingClientRect();
-        const delta = highlightsRect.height - sideRect.height;
+        const highlightsRect = rightSideElement.getBoundingClientRect();
+        const delta = highlightsRect.height - leftSideRect.height;
         const scrollMax = document.documentElement.scrollHeight - window.innerHeight;
 
         if (scrollMax <= 0 || delta <= 0) return;

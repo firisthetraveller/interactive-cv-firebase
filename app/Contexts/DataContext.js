@@ -14,6 +14,10 @@ const DataContext = createContext({
             "fr": "Projets",
             "en": "Projects"
         },
+        experiences: {
+            "fr": "Expériences",
+            "en": "Experiences"
+        },
         skills: {
             "fr": "Compétences",
             "en": "Skills"

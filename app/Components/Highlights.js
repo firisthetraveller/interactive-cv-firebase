@@ -7,37 +7,24 @@ import DataContext from "../Contexts/DataContext.js";
 
 import Heading from "./Base/Heading.js";
 import Sign from "./Deco/Sign.js";
-import HighlightBuilding from "./Deco/HighlightBuilding.js";
+import HighlightBuildingContent from "./Deco/HighlightBuildingContent.js";
 
 import { language } from "../Tools/lang.js";
 
-const Highlights = () => {
+const HighlightBuilding = ({ front = false, title, projects = [], experiences = [] }) => {
     const { isMobile } = useWindowProperties();
-    const title = useContext(DataContext).sections.highlights;
 
-    const { data: projects, isPending: isPendingA } = useCollection("projects");
-    const { data: experiences, isPending: isPendingB } = useCollection("experiences");
-
-    const { loaded, isReady } = useLoader();
-
-    useEffect(() => {
-        if (!isPendingA && !isPendingB) {
-            loaded("Highlights");
-        }
-    }, [isPendingA, isPendingB, loaded]);
-
-    return isReady() && (
-        <div className="xl:h-full xl:flex-col z-30">
+    return (
+        <div className={front ? "-mt-8" : ""}>
             {/** Roof */}
             <div className="trapezoid">
                 <Heading className="px-2 xl:px-8" level={2}>{title[language]}</Heading>
             </div>
 
             {/** Contents */}
-            <div className="bg-slate-900 shadow-xl shadow-slate-900 xl:flex xl:h-full py-2">
-
+            <div className={`${front ? "bg-slate-900 shadow-slate-900" : "bg-slate-800 shadow-slate-800 pb-12"} shadow-xl xl:flex xl:h-full py-2`}>
                 {/** Japanese signs on the left */}
-                {!isMobile() &&
+                {!isMobile() && front &&
                     <div className="-translate-x-5">
                         <Sign
                             className={`bg-orange-800 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-600 translate-y-32`}
@@ -53,9 +40,32 @@ const Highlights = () => {
 
                 {/** Contents */}
                 <div className="space-y-4">
-                    {projects && experiences && <HighlightBuilding projects={projects} experiences={experiences}/>}
+                    {experiences && <HighlightBuildingContent experiences={experiences} />}
+                    {projects && <HighlightBuildingContent projects={projects} />}
                 </div>
             </div>
+        </div>
+    )
+}
+
+const Highlights = () => {
+    const projectsTitle = useContext(DataContext).sections.highlights;
+    const expsTitle = useContext(DataContext).sections.experiences;
+    const { data: projects, isPending: isPendingA } = useCollection("projects");
+    const { data: experiences, isPending: isPendingB } = useCollection("experiences");
+
+    const { loaded, isReady } = useLoader();
+
+    useEffect(() => {
+        if (!isPendingA && !isPendingB) {
+            loaded("Highlights");
+        }
+    }, [isPendingA, isPendingB, loaded]);
+
+    return isReady() && (
+        <div id="highlights-root" className="xl:h-full xl:flex-col z-30">
+            <HighlightBuilding title={expsTitle} experiences={experiences} />
+            <HighlightBuilding front={1} title={projectsTitle} projects={projects} />
         </div>
     );
 }
