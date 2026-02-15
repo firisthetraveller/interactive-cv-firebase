@@ -15,7 +15,7 @@ const HighlightBuilding = ({ front = false, title, projects = [], experiences = 
     const { isMobile } = useWindowProperties();
 
     return (
-        <div className={front ? "-mt-8" : ""}>
+        <div className={front ? "-mt-8" : "mr-12"}>
             {/** Roof */}
             <div className="trapezoid">
                 <Heading className="px-2 xl:px-8" level={2}>{title[language]}</Heading>
@@ -39,7 +39,7 @@ const HighlightBuilding = ({ front = false, title, projects = [], experiences = 
                 }
 
                 {/** Contents */}
-                <div className="space-y-4">
+                <div className={"space-y-4"}>
                     {experiences && <HighlightBuildingContent experiences={experiences} />}
                     {projects && <HighlightBuildingContent projects={projects} />}
                 </div>
