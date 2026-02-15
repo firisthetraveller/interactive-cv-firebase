@@ -32,7 +32,7 @@ const HighlightBuildingContent = ({ projects = [], experiences = []}) => {
     return (
         <>
             {data && data.map((p, i) => (
-                <div key={i} className="mx-2 xl:px-8 px-3"
+                <div key={i} className="mx-2 xl:pl-8 xl:pr-4 px-3"
                     onMouseEnter={() => p.images ? switchMovie(p.images[0]) : clearTheater()}
                     onMouseLeave={() => clearTheater()}>
                     <div className="flex">

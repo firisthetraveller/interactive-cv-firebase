@@ -15,17 +15,17 @@ const HighlightBuilding = ({ front = false, title, projects = [], experiences = 
     const { isMobile } = useWindowProperties();
 
     return (
-        <div className={front ? "-mt-8" : "mr-12"}>
+        <div className={`${front ? "-mt-8" : "mr-12"} relative`}>
             {/** Roof */}
             <div className="trapezoid">
                 <Heading className="px-2 xl:px-8" level={2}>{title[language]}</Heading>
             </div>
 
             {/** Contents */}
-            <div className={`${front ? "bg-slate-900 shadow-slate-900" : "bg-slate-800 shadow-slate-800 pb-12"} shadow-xl xl:flex xl:h-full py-2`}>
+            <div className={`${front ? "bg-slate-900 shadow-slate-900" : "bg-slate-800 shadow-slate-800 pb-12"} ${isMobile() ? "px-4" : ""} shadow-xl xl:flex xl:h-full py-2`}>
                 {/** Japanese signs on the left */}
                 {!isMobile() && front &&
-                    <div className="-translate-x-5">
+                    <div className="-translate-x-5 absolute">
                         <Sign
                             className={`bg-orange-800 hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-600 translate-y-32`}
                             text="コIヒI好きのみ" large />
