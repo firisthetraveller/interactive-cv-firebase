@@ -19,9 +19,7 @@ const SideView = () => {
     const { isMobile } = useWindowProperties();
 
     const sideRef = useRef(null);
-    const [parallaxSpeed, setParallaxSpeed] = useState(0.3);
-
-    const ready = isReady();
+    const [parallaxSpeed, setParallaxSpeed] = useState(0.8);
 
     useEffect(() => {
         const leftSideRect = sideRef.current.getBoundingClientRect();
@@ -33,14 +31,11 @@ const SideView = () => {
 
         if (scrollMax <= 0 || delta <= 0) return;
 
-        const speed = delta / scrollMax;
-        const clampedSpeed = Math.min(Math.max(speed, 0.05), 0.6);
-
-        setParallaxSpeed(clampedSpeed);
-    }, [ready]);
+        setParallaxSpeed(delta / scrollMax);
+    }, []);
 
     const { style: leftStyle } = useCustomParallax(parallaxSpeed);
-    const { style: buildingStyle } = useCustomParallax(0.1);
+    const { style: buildingStyle } = useCustomParallax(0.07);
 
     const goToDesktopPls = useContext(DataContext).placeholders.goToDesktopPls[language];
 
