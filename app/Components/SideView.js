@@ -19,7 +19,7 @@ const SideView = () => {
     const { isMobile } = useWindowProperties();
 
     const sideRef = useRef(null);
-    const [parallaxSpeed, setParallaxSpeed] = useState(0.8);
+    const [parallaxSpeed, setParallaxSpeed] = useState(0.65);
 
     useEffect(() => {
         const leftSideRect = sideRef.current.getBoundingClientRect();
@@ -31,7 +31,7 @@ const SideView = () => {
 
         if (scrollMax <= 0 || delta <= 0) return;
 
-        setParallaxSpeed(delta / scrollMax);
+        setParallaxSpeed(Math.max((delta / scrollMax) - 0.1, 0.8));
     }, []);
 
     const { style: leftStyle } = useCustomParallax(parallaxSpeed);
