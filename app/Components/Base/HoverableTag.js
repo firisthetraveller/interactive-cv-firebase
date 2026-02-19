@@ -36,7 +36,7 @@ const HoverableTag = ({ name }) => {
                     ? "bg-teal-100 shadow-lg shadow-teal-200 text-slate-800"
                     : (isActiveLight(name)
                         ? "bg-yellow-100 shadow-lg shadow-yellow-200 text-slate-800"
-                        : "bg-slate-700 hover:bg-slate-500")
+                        : "bg-slate-950 hover:bg-slate-600")
                 }`}
                 onClick={() => toggleLight(name)}>
                 {name}

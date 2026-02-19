@@ -1,6 +1,5 @@
 import { memo } from "react";
 
-import useLoader from "../Hooks/useLoader";
 import useTheaterProjector from "../Hooks/useTheaterProjector";
 import ResizeSVG from "./Base/ResizeSVG";
 
@@ -27,7 +26,6 @@ const BuildingSVG = memo(() => {
 
 const BuildingScreen = ({ className, style }) => {
     const { url, color } = useTheaterProjector();
-    const { isReady } = useLoader();
 
     const colors = {
         "pink": "shadow-pink-200",
@@ -42,7 +40,7 @@ const BuildingScreen = ({ className, style }) => {
         <div className="shadow-pink-200 shadow-slate-400 shadow-white shadow-purple-400" />
     )
 
-    return isReady() && (
+    return (
         <div className={`-z-20 ${className}`} style={{ ...style }}>
             <BuildingSVG />
 

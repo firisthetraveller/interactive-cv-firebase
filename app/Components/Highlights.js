@@ -1,18 +1,31 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 import useWindowProperties from "../Hooks/useWindowProperties.js";
 import useCollection from "../Hooks/useCollection.js";
-import useLoader from "../Hooks/useLoader.js";
 import DataContext from "../Contexts/DataContext.js";
 
 import Heading from "./Base/Heading.js";
 import Sign from "./Deco/Sign.js";
-import HighlightBuildingContent from "./Deco/HighlightBuildingContent.js";
+import { HighlightBuildingContent, HighlightBuildingEmpty } from "./Deco/HighlightBuildingContent.js";
 
 import { language } from "../Tools/lang.js";
 
-const HighlightBuilding = ({ front = false, title, projects = [], experiences = [] }) => {
+/**
+ * 
+ * @param {object} param0 
+ * @param {boolean} param0.front
+ * @param {string} param0.title
+ * @param {"projects" | "education"} param0.collection
+ * @returns 
+ */
+const HighlightBuilding = ({ front = false, title, collection }) => {
     const { isMobile } = useWindowProperties();
+    const { data: projects, isPending } = useCollection(collection);
+
+    const hoverStyles = {
+        front: "bg-slate-800 shadow-slate-800",
+        back: "bg-slate-700 shadow-slate-700"
+    }
 
     return (
         <div className={`${front ? "-mt-8" : "mr-12"} relative`}>
@@ -40,8 +53,10 @@ const HighlightBuilding = ({ front = false, title, projects = [], experiences = 
 
                 {/** Contents */}
                 <div className={"space-y-4"}>
-                    {experiences && <HighlightBuildingContent experiences={experiences} />}
-                    {projects && <HighlightBuildingContent projects={projects} />}
+                    {!projects
+                        ? <HighlightBuildingEmpty count={front ? 7 : 4}/>
+                        : <HighlightBuildingContent projects={projects} hoverStyle={front ? hoverStyles.front : hoverStyles.back} />
+                    }
                 </div>
             </div>
         </div>
@@ -51,21 +66,11 @@ const HighlightBuilding = ({ front = false, title, projects = [], experiences = 
 const Highlights = () => {
     const projectsTitle = useContext(DataContext).sections.highlights;
     const expsTitle = useContext(DataContext).sections.experiences;
-    const { data: projects, isPending: isPendingA } = useCollection("projects");
-    const { data: experiences, isPending: isPendingB } = useCollection("experiences");
 
-    const { loaded, isReady } = useLoader();
-
-    useEffect(() => {
-        if (!isPendingA && !isPendingB) {
-            loaded("Highlights");
-        }
-    }, [isPendingA, isPendingB, loaded]);
-
-    return isReady() && (
+    return (
         <div id="highlights-root" className="xl:h-full xl:flex-col z-30">
-            <HighlightBuilding title={expsTitle} experiences={experiences} />
-            <HighlightBuilding front={1} title={projectsTitle} projects={projects} />
+            <HighlightBuilding title={expsTitle} collection="experiences" />
+            <HighlightBuilding front={1} title={projectsTitle} collection="projects" />
         </div>
     );
 }

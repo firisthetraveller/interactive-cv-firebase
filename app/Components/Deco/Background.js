@@ -1,12 +1,10 @@
 import ResizeSVG from "../Base/ResizeSVG";
-import useLoader from '../../Hooks/useLoader';
+
 import Smoke from './Smoke';
 import Bird from "./Bird";
 
 export default function Background() {
-    const { isReady } = useLoader();
-
-    return isReady() && (
+    return (
         <ResizeSVG className="-z-10 pl-8 translate-y-2" height={700} width={800} minWidth={1280}>
             <g>
                 {/** Bird */}

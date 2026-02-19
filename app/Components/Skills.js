@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact, faVuejs } from "@fortawesome/free-brands-svg-icons";
+import { faReact } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
 
@@ -9,7 +9,6 @@ import Heading from "./Base/Heading";
 import { useContext } from "react";
 import DataContext from "../Contexts/DataContext";
 import { language } from "../Tools/lang";
-import useLoader from "../Hooks/useLoader";
 
 import firebaseLogo from "../../public/assets/icons/firebase.svg";
 import tailwindLogo from "../../public/assets/icons/tailwind.svg";
@@ -33,7 +32,6 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
 
 const Skills = () => {
     const { isActiveLight } = useLights();
-    const { isReady } = useLoader();
     const { width } = useWindowProperties();
 
     const skills = [
@@ -52,7 +50,7 @@ const Skills = () => {
 
     const title = useContext(DataContext).sections.skills[language];
 
-    return isReady() && (
+    return (
         <div className="my-2 xl:pl-8 relative">
             <Heading level={2}>{title}</Heading>
             <ResizeSVG className="-z-10 translate-y-[0.4rem] absolute" height={700} width={width * 0.7} minWidth={1280}>

@@ -4,7 +4,6 @@ import DataContext from "../Contexts/DataContext";
 
 import useWindowProperties from "../Hooks/useWindowProperties";
 import useCustomParallax from "../Hooks/useCustomParallax";
-import useLoader from "../Hooks/useLoader";
 
 import Languages from "./Languages";
 import Contacts from "./Contacts";
@@ -18,7 +17,6 @@ import { language } from "../Tools/lang";
 
 const SideView = () => {
     const { isMobile } = useWindowProperties();
-    const { isReady } = useLoader();
 
     const sideRef = useRef(null);
     const [parallaxSpeed, setParallaxSpeed] = useState(0.3);
@@ -26,12 +24,8 @@ const SideView = () => {
     const ready = isReady();
 
     useEffect(() => {
-        if (!ready || !sideRef.current) return;
-
         const leftSideRect = sideRef.current.getBoundingClientRect();
         const rightSideElement = document.getElementById("highlights-root");
-
-        if (!rightSideElement) return;
 
         const highlightsRect = rightSideElement.getBoundingClientRect();
         const delta = highlightsRect.height - leftSideRect.height;
