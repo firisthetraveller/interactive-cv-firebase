@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import React, { useContext } from "react";
 
 import useWindowProperties from "../Hooks/useWindowProperties.js";
 import useCollection from "../Hooks/useCollection.js";
@@ -6,7 +6,7 @@ import DataContext from "../Contexts/DataContext.js";
 
 import Heading from "./Base/Heading.js";
 import HoverableTag from "./Base/HoverableTag.js";
-import Sign from "./Deco/Sign.js";
+const Sign = React.lazy(() => import("./Deco/Sign.js"));
 
 import { language } from "../Tools/lang.js";
 

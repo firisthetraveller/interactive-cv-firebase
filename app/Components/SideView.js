@@ -1,4 +1,4 @@
-import { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 
 import DataContext from "../Contexts/DataContext";
 
@@ -11,7 +11,8 @@ import Skills from "./Skills";
 import Interests from "./Interests";
 import Education from "./Education";
 import Background from "./Deco/Background";
-import BuildingScreen from "./BuildingScreen";
+
+const BuildingScreen = React.lazy(() => import('./BuildingScreen'));
 
 import { language } from "../Tools/lang";
 
