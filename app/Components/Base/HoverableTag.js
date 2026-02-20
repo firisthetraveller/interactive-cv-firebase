@@ -20,13 +20,13 @@ const HoverableTag = ({ name }) => {
     }, [ref]);
 
     return (
-        <div ref={ref}>
-            <ResizeSVG width={divWidth} height={34} minWidth={1280} className="pointer-events-none">
+        <div ref={ref} className="relative">
+            <ResizeSVG width={divWidth} height={8} minWidth={1280} className="pointer-events-none bottom-0 absolute">
                 {/** TODO: Curtains */}
 
                 {/** This is the guardrail */}
-                <line x1={0} y1={28} x2={divWidth} y2={28} strokeWidth={1} stroke="#475569" />
-                {Array.from({ length: divWidth / 4 }, (e, i) => i + 1).map(i => <line key={i} x1={4 + 4 * i} y1={28} x2={4 + 4 * i} y2={34} strokeWidth={1} strokeOpacity={0.4} stroke="#475569" />)}
+                <line x1={0} y1={0} x2={divWidth} y2={0} strokeWidth={1} stroke="#475569" />
+                {Array.from({ length: divWidth / 4 }, (e, i) => i + 1).map(i => <line key={i} x1={4 + 4 * i} y1={0} x2={4 + 4 * i} y2={8} strokeWidth={1} strokeOpacity={0.4} stroke="#475569" />)}
             </ResizeSVG>
 
             {/** The window lighting up and turning off */}
