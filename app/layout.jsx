@@ -14,6 +14,7 @@ export default function RootLayout({ children }) {
                 <link
                     href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,200&family=Poppins:wght@400;600;700;800&display=swap"
                     rel="stylesheet" />
+                <meta name="google-site-verification" content="i0ayqPH1T-pbP9Bm-DzcDGVxuzOMaY881WrQdPMCIQM" />
             </head>
 
             <body>
