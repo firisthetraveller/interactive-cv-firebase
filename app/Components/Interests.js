@@ -48,23 +48,22 @@ const Interests = () => {
                         : <InterestEmptyList />
                     }
                 </div>
-                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-145">
-                    {infoLines.length > 0
-                        ? <motion.p
+                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-145 h-12">
+                    <motion.p
                             className="xl:text-yellow-300 xl:text-shadow-light xl:pixel-font"
                             initial={{ opacity: 0, y: -10 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0, y: -10 }}
                             transition={{ duration: 1 }}>
-                            {infoLines}
+                            {infoLines.length > 0 ? infoLines : placeholder[language]}
                         </motion.p>
-                        :
+                        {/* :
                         <div>
                             <p className="text-slate-400 italic">
                                 {placeholder[language]}
                             </p><br /><p></p>
                         </div>
-                    }
+                    } */}
                 </div>
             </div>
         </div>
