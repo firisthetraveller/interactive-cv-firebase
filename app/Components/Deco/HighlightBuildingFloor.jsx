@@ -57,7 +57,7 @@ export const HighlightBuildingFloor = ({ project, hoverStyle }) => {
     const { clearTheater, switchMovie } = useTheaterProjector();
 
     return (
-        <div className={`py-2 xl:pl-8 xl:pr-4 px-3 ${isHovered ? hoverStyle : ""}`}
+        <div className={`py-4 xl:pl-8 xl:pr-4 px-3 ${isHovered ? hoverStyle : ""}`}
             onMouseEnter={() => {
                 setHovered(true);
                 project.images ? switchMovie(project.images[0]) : clearTheater();
