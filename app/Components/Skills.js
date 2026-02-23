@@ -23,7 +23,7 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
 
     return (
         <div className="flex items-center cursor-pointer min-h-11" onClick={() => toggleLight(name)}>
-            {icon && <Image className="m-2" unoptimized src={icon} alt={name} width={noname ? 32 * 3 : 32} height={32} aria-label={`icon for ${icon}`} />}
+            {icon && <Image className="m-2" unoptimized src={icon} alt={name} width={noname ? 32 * 3 : 32} height={32} aria-label={`icon for ${name}`} />}
             {faIcon && <FontAwesomeIcon icon={faIcon} className="m-2" size="2x" />}
             {!noname && <p className="mx-2">{name}</p>}
         </div>
