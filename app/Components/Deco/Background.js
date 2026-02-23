@@ -34,7 +34,7 @@ const Background = () => {
 
                 {/** Smoke */}
                 {/* <path id="smokeCurve" d={"M 650 350 Q 680 50 750 0"} fill="none" stroke="lightgray" strokeWidth="2" /> */}
-                <Smoke />
+                <Smoke sourceX={650} sourceY={528}/>
             </g>
         </ResizeSVG>
     )

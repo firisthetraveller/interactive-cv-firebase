@@ -1,5 +1,4 @@
 import React, { useCallback, useContext, useState } from "react";
-import { motion } from "framer-motion";
 
 import Heading from "./Base/Heading";
 import { language, localeText } from "../Tools/lang";
@@ -16,7 +15,9 @@ const LanguageDisplay = React.memo(({ name, level, certification }) => {
         <>
             {certification
                 ? <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <p>{name} {level} {showCert && <motion.span className="italic text-sm px-1 xl:text-yellow-300 xl:text-shadow-light xl:pixel-font" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 1 }}>{certification}</motion.span>}</p>
+                    <p>{name} {level} {showCert && <span className="fade-in italic text-sm px-1 xl:text-yellow-300 xl:text-shadow-light xl:pixel-font">
+                        {certification}
+                    </span>}</p>
                 </div>
                 : <div>
                     <p>{name} {level}</p>
@@ -30,7 +31,7 @@ const LanguagesEmpty = () => {
     return (
         <>
             {[...Array(3).keys()].map(i => <div key={i}>
-                <p className="min-h-6 w-full skeleton"/>
+                <p className="min-h-6 w-full skeleton" />
             </div>)}
         </>
     )

@@ -8,6 +8,9 @@ const nextConfig: NextConfig = {
   
   basePath: `/${repoName}`,
   assetPrefix: `/${repoName}/`,
+  compiler: {
+    styledComponents: true,
+  }
 }
 
 export default nextConfig;

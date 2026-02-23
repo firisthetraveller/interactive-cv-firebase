@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 
-import { motion } from "framer-motion";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import Heading from "./Base/Heading";
@@ -49,14 +48,9 @@ const Interests = () => {
                     }
                 </div>
                 <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-145 h-12">
-                    <motion.p
-                        className={`${infoLines.length > 0 ? "xl:text-yellow-300 xl:text-shadow-light xl:pixel-font" : "italic text-gray-400"}`}
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -10 }}
-                        transition={{ duration: 1 }}>
+                    <p className={`${infoLines.length > 0 ? "xl:text-yellow-300 xl:text-shadow-light xl:pixel-font slide-down" : "italic text-gray-400"}`}>
                         {infoLines.length > 0 ? infoLines : placeholder[language]}
-                    </motion.p>
+                    </p>
                     {/* :
                         <div>
                             <p className="text-slate-400 italic">

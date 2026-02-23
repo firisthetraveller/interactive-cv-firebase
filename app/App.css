@@ -122,7 +122,7 @@ body {
   }
 
   50% {
-    transform: translateX(-2);
+    transform: translateX(-2px);
   }
 }
 
@@ -132,4 +132,34 @@ body {
 
 .skeleton-circle {
   @apply bg-gray-200 animate-pulse rounded-full;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.slide-down {
+  animation: slide-down 1s ease-in-out;
+}
+
+.fade-in {
+  animation: fade-in 1s ease-in-out;
 }
