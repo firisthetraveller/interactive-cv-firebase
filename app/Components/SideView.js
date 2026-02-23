@@ -17,7 +17,7 @@ const BuildingScreen = React.lazy(() => import('./BuildingScreen'));
 import { language } from "../Tools/lang";
 
 const SideView = () => {
-    const { isMobile } = useWindowProperties();
+    const { isMobile, isVeryLargeDesktop } = useWindowProperties();
 
     const sideRef = useRef(null);
     const [parallaxSpeed, setParallaxSpeed] = useState(0.65);
@@ -39,11 +39,13 @@ const SideView = () => {
     const { style: buildingStyle } = useCustomParallax(0.07);
 
     const goToDesktopPls = useContext(DataContext).placeholders.goToDesktopPls[language];
+    const maybeZoomALittleBit = useContext(DataContext).placeholders.maybeZoomALittleBit[language];;
 
     return (
         <div ref={sideRef} className="xl:h-full xl:pt-16" style={isMobile() ? {} : { ...leftStyle }}>
             <Background />
             {isMobile() && <p className="italic py-5">{goToDesktopPls}</p>}
+            {isVeryLargeDesktop() && <p className="italic py-5">{maybeZoomALittleBit}</p>}
             <Contacts />
             <Skills />
             <div className="flex space-x-24">

@@ -37,5 +37,9 @@ export default function useWindowProperties() {
     return windowProperties.width < 1280;
   }
 
-  return { ...windowProperties, isMobile };
+  const isVeryLargeDesktop = () => {
+    return windowProperties.width > 1920;
+  }
+
+  return { ...windowProperties, isMobile, isVeryLargeDesktop };
 }

@@ -39,7 +39,17 @@ const DataContext = createContext({
         goToDesktopPls: {
             "en": "Switch to desktop for a completely different viewing experience!",
             "fr": "Passez sur grand écran pour un visionnage complètement différent !"
+        },
+        maybeZoomALittleBit: {
+            "en": "The website is currently a work in progress. Very large screens are not yet supported. Zoom a little bit to see how it is supposed to look like! (Ctrl + '+')",
+            "fr": "Le site est en cours de construction, et les écrans très larges ne sont pas encore supportés. Vous pouvez voir à quoi c'est censé ressembler en zoomant! (Ctrl + '+')"
         }
+    },
+    tags: {
+        ["Active Listening"]: {
+            "en": "Active Listening",
+            "fr": "Écoute Active"
+        },
     }
 });
 
