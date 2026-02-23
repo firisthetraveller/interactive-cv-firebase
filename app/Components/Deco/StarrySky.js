@@ -9,8 +9,8 @@ const stars = Array.from({ length: 30 }, () => {
     }
 });
 
-export default function StarrySky () {
-    const {width, height} = useWindowProperties();
+const StarrySky = () => {
+    const { width, height } = useWindowProperties();
 
     return (
         <ResizeSVG className={"z-0"} width={width * 0.9} height={height * 0.7}>
@@ -25,4 +25,6 @@ export default function StarrySky () {
             {/* Moon */}
         </ResizeSVG>
     );
-}
+};
+
+export default StarrySky;

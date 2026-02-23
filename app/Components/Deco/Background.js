@@ -3,7 +3,7 @@ import ResizeSVG from "../Base/ResizeSVG";
 import Smoke from './Smoke';
 import Bird from "./Bird";
 
-export default function Background() {
+const Background = () => {
     return (
         <ResizeSVG className="-z-10 pl-8 translate-y-2" height={700} width={800} minWidth={1280}>
             <g>
@@ -38,4 +38,6 @@ export default function Background() {
             </g>
         </ResizeSVG>
     )
-}
+};
+
+export default Background;
