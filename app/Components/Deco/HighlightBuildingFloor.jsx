@@ -71,7 +71,7 @@ export const HighlightBuildingFloor = ({ project, hoverStyle }) => {
                 {project.url && <a href={project.url} target="_blank" rel="noreferrer"><FontAwesomeIcon className="mx-2" icon={faArrowUpRightFromSquare} /></a>}
                 {project.github && <a href={project.github} target="_blank" rel="noreferrer"><FontAwesomeIcon className="mx-2" icon={faGithub} /></a>}
             </div>
-            <p>{project.date.includes("/") ? locateDateString(new Date(project.date)) : project.date}{project.duration && ` - ${localeText(project.duration)}`}</p>
+            <p>{project.date.includes("/") ? locateDateString(new Date(project.date)) : project.date}{project.duration && (Object.keys(project.duration).includes("days") ? ` - ${new Intl.DurationFormat(language, {style: "long"}).format(project.duration)}` : ` - ${localeText(project.duration)}`)}</p>
             {project.location && <p className="text-sm">{localeText(project.location)}</p>}
             <p className="italic text-sm">
                 {project.description[language].split(". ").map((sentence, i) => (
