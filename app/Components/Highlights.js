@@ -35,7 +35,7 @@ const HighlightBuilding = ({ front = false, title, collection }) => {
             </div>
 
             {/** Contents */}
-            <div className={`${front ? "bg-slate-900 shadow-slate-900" : "bg-slate-800 shadow-slate-800 pb-12"} ${isMobile() ? "px-4" : ""} shadow-xl xl:flex xl:h-full py-2`}>
+            <div className={`${front ? "bg-slate-900 shadow-slate-900" : "bg-slate-800 shadow-slate-800 pb-12"} ${isMobile() ? "px-4" : ""} shadow-xl xl:flex xl:h-full`}>
                 {/** Japanese signs on the left */}
                 {!isMobile() && front &&
                     <div className="-translate-x-5 absolute">
@@ -52,7 +52,7 @@ const HighlightBuilding = ({ front = false, title, collection }) => {
                 }
 
                 {/** Contents */}
-                <div className={"space-y-4"}>
+                <div>
                     {!projects
                         ? <HighlightBuildingEmpty count={front ? 7 : 4}/>
                         : <HighlightBuildingContent projects={projects} hoverStyle={front ? hoverStyles.front : hoverStyles.back} />
