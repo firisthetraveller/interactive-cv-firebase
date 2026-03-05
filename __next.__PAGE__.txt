@@ -1,6 +1,6 @@
 1:"$Sreact.fragment"
-2:I[19858,["/interactive-cv-firebase/_next/static/chunks/31a7bfaa533cb930.js"],"ClientOnly"]
+2:I[19858,["/interactive-cv-firebase/_next/static/chunks/fc44d67a7e0df936.js"],"ClientOnly"]
 3:I[97367,["/interactive-cv-firebase/_next/static/chunks/ff1a16fafef87110.js","/interactive-cv-firebase/_next/static/chunks/7738b2b176cf8288.js"],"OutletBoundary"]
 4:"$Sreact.suspense"
-0:{"buildId":"CsgWt_zlzZDMCiCrSYqXI","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/interactive-cv-firebase/_next/static/chunks/31a7bfaa533cb930.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
+0:{"buildId":"gyluCdjYa6rww_0mRHzdW","rsc":["$","$1","c",{"children":[["$","$L2",null,{}],[["$","script","script-0",{"src":"/interactive-cv-firebase/_next/static/chunks/fc44d67a7e0df936.js","async":true}]],["$","$L3",null,{"children":["$","$4",null,{"name":"Next.MetadataOutlet","children":"$@5"}]}]]}],"loading":null,"isPartial":false}
 5:null
