@@ -47,7 +47,7 @@ const Interests = () => {
                         : <InterestEmptyList />
                     }
                 </div>
-                <div className="xl:pl-3 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:w-145 h-12">
+                <div className="xl:pl-4 xl:rounded-md xl:bg-[#020617] xl:w-145 h-12">
                     <p className={`${infoLines.length > 0 ? "xl:text-yellow-300 xl:text-shadow-light xl:pixel-font slide-down" : "italic text-gray-400"}`}>
                         {infoLines.length > 0 ? infoLines : placeholder[language]}
                     </p>
