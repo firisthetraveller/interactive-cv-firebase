@@ -54,7 +54,7 @@ const Skills = () => {
     return (
         <div className="my-2 xl:pl-8 relative">
             <Heading level={2}>{title}</Heading>
-            {!isMobile() && <Image src={CablesSVG} alt={"Deco cables behind skills"} className="-z-10 translate-y-[0.4rem] absolute w-252 h-7.5"/>}
+            {!isMobile() && <Image src={CablesSVG} alt={"Deco cables behind skills"} className="-z-10 translate-y-[0.4rem] absolute w-252 h-auto"/>}
             
             <div className="flex items-center text-white flex-wrap">
                 {skills.map((s, i) =>
