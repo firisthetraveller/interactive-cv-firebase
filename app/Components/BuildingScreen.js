@@ -1,28 +1,7 @@
-import { memo } from "react";
-
 import useTheaterProjector from "../Hooks/useTheaterProjector";
-import ResizeSVG from "./Base/ResizeSVG";
 
-const BuildingSVG = memo(() => {
-    return (
-        <>
-            <ResizeSVG minWidth={1280} width={240} height={400} className="-z-30">
-                {/** Ad board */}
-                <rect x={0} y={176} width={240} height={400} fill="#132135" />
-
-                {/** Ad board leg */}
-                <line x1={30} y1={0} x2={30} y2={176} strokeWidth={4} stroke="#000" />
-                <line x1={120} y1={0} x2={120} y2={176} strokeWidth={4} stroke="#000" />
-                <line x1={210} y1={0} x2={210} y2={176} strokeWidth={4} stroke="#000" />
-            </ResizeSVG>
-            <ResizeSVG minWidth={1280} height={400} width={240}>
-                {/** Background building windows */}
-                {[1, 2, 3, 4, 5, 6, 7].map(i => <line key={i} x1={30 * i} y1={176} x2={30 * i} y2={400} strokeWidth={1} stroke="#475569" />)}
-                {[1, 2, 3, 4].map(i => <line key={i} x1={0} y1={176 + 44 * i} x2={240} y2={176 + 44 * i} strokeWidth={1} stroke="#475569" />)}
-            </ResizeSVG>
-        </>
-    )
-});
+import BuildingLogo from '../../public/assets/deco/building.svg';
+import Image from "next/image";
 
 const BuildingScreen = ({ className = "", style = {} }) => {
     const { url, color } = useTheaterProjector();
@@ -42,7 +21,7 @@ const BuildingScreen = ({ className = "", style = {} }) => {
 
     return (
         <div className={`-z-20 ${className}`} style={{ ...style }}>
-            <BuildingSVG />
+            <Image src={BuildingLogo} className="absolute -z-30 w-60 max-w-60" alt="Background building"/>
 
             {/** Contents of the ad board */}
             <div className={`-z-30 h-40 w-60 max-h-40 max-w-60 px-2 flex justify-center items-center ${url ? "bg-slate-500" : "bg-slate-800"}`}>
