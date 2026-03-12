@@ -69,7 +69,7 @@ const Icon = ({ className, data, onHover, onExit }) => {
 
     return (
         <div className={`flex items-center gap-x-3 ${className}`} onMouseEnter={onHover} onMouseLeave={onExit} >
-            <FontAwesomeIcon size={"2x"} icon={icons[data.id]} aria-label={`icon for ${data.icon}`} />
+            <FontAwesomeIcon className="text-xl" icon={icons[data.id]} aria-label={`icon for ${data.icon}`} />
 
             <p>{data.name[language]}</p>
         </div>

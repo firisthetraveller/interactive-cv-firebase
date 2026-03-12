@@ -71,18 +71,18 @@ body {
 }
 
 .trapezoid {
-  border-bottom: 32px solid rgb(100 116 139 / 100);
+  border-bottom: 2rem solid rgb(100 116 139 / 100);
   /* #64748b */
-  border-left: 28px solid transparent;
-  border-right: 24px solid transparent;
+  border-left: 1.75rem solid transparent;
+  border-right: 1.5rem solid transparent;
   height: 0;
 }
 
 @media (min-width: 1280px) {
   .xl\:trapezoid {
-    border-bottom: 28px solid rgb(100 116 139 / 100);
+    border-bottom: 1.75rem solid rgb(100 116 139 / 100);
     /* #54647b */
-    border-left: 24px solid transparent;
+    border-left: 1.5rem solid transparent;
     height: 0;
   }
 }
