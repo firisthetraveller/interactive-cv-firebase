@@ -10,9 +10,9 @@ import Contacts from "./Contacts";
 import Skills from "./Skills";
 import Interests from "./Interests";
 import Education from "./Education";
-import Background from "./Deco/Background";
 
 const BuildingScreen = React.lazy(() => import('./BuildingScreen'));
+const Background = React.lazy(() => import('./Deco/Background'));
 
 import { language } from "../Tools/lang";
 
