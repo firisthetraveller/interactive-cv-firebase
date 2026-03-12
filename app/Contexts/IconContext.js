@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import { faArrowUpRightFromSquare, faEnvelope, faGamepad, faLocationDot, faPaintBrush, faPersonRunning, faPhoneVolume, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
+import { faArrowUpRightFromSquare, faMusic, faEnvelope, faGamepad, faLocationDot, faPaintBrush, faPersonRunning, faPhoneVolume, faPlaneDeparture } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedinIn } from "@fortawesome/free-brands-svg-icons";
 
 const IconContext = createContext({
@@ -13,7 +13,8 @@ const IconContext = createContext({
     Running: faPersonRunning,
     Travel: faPlaneDeparture,
     Draw: faPaintBrush,
-    Play: faGamepad
+    Play: faGamepad,
+    Music: faMusic
 });
  
 export default IconContext;
