@@ -1,6 +1,6 @@
 import ResizeSVG from "../Base/ResizeSVG";
 
-import BackgroundSVG from "../../../public/assets/deco/background.svg";
+import BackgroundSVG from "../../../public/assets/deco/poles.svg";
 
 import Smoke from './Smoke';
 import Bird from "./Bird";

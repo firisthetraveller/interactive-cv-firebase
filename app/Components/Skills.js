@@ -1,12 +1,13 @@
 import Image from "next/image";
+import { useContext } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faReact } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
+import useWindowProperties from "../Hooks/useWindowProperties";
 
 import Heading from "./Base/Heading";
-import { useContext } from "react";
 import DataContext from "../Contexts/DataContext";
 import { language } from "../Tools/lang";
 
@@ -14,16 +15,16 @@ import firebaseLogo from "../../public/assets/icons/firebase.svg";
 import tailwindLogo from "../../public/assets/icons/tailwind.svg";
 import nextLogo from "../../public/assets/icons/nextjs.svg";
 import d3Logo from "../../public/assets/icons/d3.svg";
-import ResizeSVG from "./Base/ResizeSVG";
+
+import CablesSVG from "../../public/assets/deco/pole-cables.svg";
 import Bird from "./Deco/Bird";
-import useWindowProperties from "../Hooks/useWindowProperties";
 
 const Icon = ({ name, icon, faIcon, noname = false }) => {
     const { toggleLight } = useLights();
 
     return (
         <div className="flex items-center cursor-pointer min-h-11" onClick={() => toggleLight(name)}>
-            {icon && <Image className={`m-2 ${noname ? "w-24" : "w-8"} h-8`} src={icon} alt={name} aria-label={`icon for ${name}`} />}
+            {icon && <Image className={`m-2 ${noname ? "w-24" : "w-8"} h-auto`} src={icon} alt={name} aria-label={`icon for ${name}`} />}
             {faIcon && <FontAwesomeIcon icon={faIcon} className="m-2 text-xl" />}
             {!noname && <p className="mx-2">{name}</p>}
         </div>
@@ -32,7 +33,7 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
 
 const Skills = () => {
     const { isActiveLight } = useLights();
-    const { width } = useWindowProperties();
+    const { width, isMobile } = useWindowProperties();
 
     const skills = [
         { name: "React", faIcon: faReact, color: "cyan" },
@@ -53,19 +54,8 @@ const Skills = () => {
     return (
         <div className="my-2 xl:pl-8 relative">
             <Heading level={2}>{title}</Heading>
-            <ResizeSVG className="-z-10 translate-y-[0.4rem] absolute" height={700} width={width * 0.7} minWidth={1280}>
-                {/** First horizontal bar */}
-                <line x1={-100} y1={14} x2={width * 0.7} y2={14} stroke="black" strokeWidth={4} />
-                <line x1={630} y1={11} x2={680} y2={11} stroke="lightgray" strokeWidth={1} />
-
-                {/** Birds */}
-                <Bird position={{ x: width >= 1920 ? 786 : 586, y: 9 }} />
-                <Bird position={{ x: width >= 1920 ? 770 : 570, y: 9 }} />
-
-                {/** Second horizontal bar */}
-                <line x1={-100} y1={26} x2={width * 0.7} y2={26} stroke="black" strokeWidth={4} />
-                <line x1={610} y1={24} x2={660} y2={24} stroke="lightgray" strokeWidth={1} />
-            </ResizeSVG>
+            {!isMobile() && <Image src={CablesSVG} alt={"Deco cables behind skills"} className="-z-10 translate-y-[0.4rem] absolute w-252 h-7.5"/>}
+            
             <div className="flex items-center text-white flex-wrap">
                 {skills.map((s, i) =>
                     <div key={i} className={`xl:border-solid xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500 max-lg:shadow glow max-lg:shadow-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
