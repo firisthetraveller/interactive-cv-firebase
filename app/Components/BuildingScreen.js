@@ -21,7 +21,10 @@ const BuildingScreen = ({ className = "", style = {} }) => {
 
     return (
         <div className={`-z-20 ${className}`} style={{ ...style }}>
-            <Image src={BuildingLogo} className="absolute -z-30 w-60 max-w-60" alt="Background building"/>
+            <Image
+                src={BuildingLogo} className="absolute -z-30 w-60 max-w-60"
+                alt="Background building"
+                loading="eager"/>
 
             {/** Contents of the ad board */}
             <div className={`-z-30 h-40 w-60 max-h-40 max-w-60 px-2 flex justify-center items-center ${url ? "bg-slate-500" : "bg-slate-800"}`}>
