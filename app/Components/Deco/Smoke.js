@@ -34,8 +34,6 @@ const Smoke = React.memo(({sourceX, sourceY}) => {
         }))
     );
 
-    console.log({ends});
-
     return (
         <>
             {

@@ -1,6 +1,6 @@
 import useWindowProperties from "../../Hooks/useWindowProperties";
 
-const ResizeSVG = ({ children, className, height, width, minWidth = 0 }) => {
+const ResizeSVG = ({ children, className = "", height, width, minWidth = 0 }) => {
     const { width: screenWidth } = useWindowProperties();
 
     return (

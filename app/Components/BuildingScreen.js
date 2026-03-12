@@ -24,7 +24,7 @@ const BuildingSVG = memo(() => {
     )
 });
 
-const BuildingScreen = ({ className, style }) => {
+const BuildingScreen = ({ className = "", style = {} }) => {
     const { url, color } = useTheaterProjector();
 
     const colors = {
