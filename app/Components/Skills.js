@@ -45,7 +45,7 @@ const Skills = () => {
     /** Tailwind loader for skill icons */
     // eslint-disable-next-line no-unused-vars
     const dummy = (
-        <div className="xl:bg-cyan-950 xl:bg-cyan-500 xl:bg-gray-950 xl:bg-gray-500 xl:bg-orange-950 xl:bg-orange-500 xl:bg-green-950 xl:bg-green-500 xl:bg-sky-950 xl:bg-sky-500" />
+        <div className="xl:bg-cyan-950 xl:bg-cyan-500 max-lg:shadow-cyan-500 max-lg:shadow-gray-500 max-lg:shadow-orange-500 max-lg:shadow-sky-500 xl:bg-gray-950 xl:bg-gray-500 xl:bg-orange-950 xl:bg-orange-500 xl:bg-green-950 xl:bg-green-500 xl:bg-sky-950 xl:bg-sky-500" />
     )
 
     const title = useContext(DataContext).sections.skills[language];
@@ -68,7 +68,7 @@ const Skills = () => {
             </ResizeSVG>
             <div className="flex items-center text-white flex-wrap">
                 {skills.map((s, i) =>
-                    <div key={i} className={`xl:border-solid xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
+                    <div key={i} className={`xl:border-solid xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500 max-lg:shadow glow max-lg:shadow-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
                         <Icon name={s.name} icon={s.icon} faIcon={s.faIcon} noname={s.noname} />
                     </div>
                 )}
