@@ -45,7 +45,7 @@ const Languages = () => {
         <div className="my-2 xl:pl-8">
             <Heading level={2}>{title[language]}</Heading>
 
-            <div className="xl:pl-1 xl:rounded-md xl:bg-[#020617] xl:m-2 xl:px-2 xl:py-1 xl:w-67.5 flex flex-col gap-y-2">
+            <div className="xl:rounded-md xl:bg-[#020617] xl:px-4 xl:py-1 xl:w-67.5 flex flex-col gap-y-2">
                 {/* <LanguagesEmpty /> */}
                 {!languages
                     ? <LanguagesEmpty />
