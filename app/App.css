@@ -38,21 +38,68 @@ body {
   font-style: normal;
 }
 
-@media (min-width: 1920px) {
-  html {
-    font-size: 20px;
-  }
-}
+@layer base {
 
-@media (min-width: 2400px) {
-  html {
-    font-size: 24px;
+  /** Ugly and not precise but clamp does not work for some reason */
+  /** TODO: clamp(16px, 1.05vw, 42px) */
+  @media (min-width: 1440px) {
+    html {
+      font-size: 16px;
+    }
   }
-}
 
-@media (min-width: 3840px) {
-  html {
-    font-size: 40px;
+  @media (min-width: 1704px) {
+    html {
+      font-size: 18px;
+    }
+  }
+
+  @media (min-width: 1968px) {
+    html {
+      font-size: 21px;
+    }
+  }
+
+  @media (min-width: 2232px) {
+    html {
+      font-size: 24px;
+    }
+  }
+
+  @media (min-width: 2496px) {
+    html {
+      font-size: 27px;
+    }
+  }
+
+  @media (min-width: 2760px) {
+    html {
+      font-size: 30px;
+    }
+  }
+
+  @media (min-width: 3024px) {
+    html {
+      font-size: 33px;
+    }
+  }
+
+  @media (min-width: 3288px) {
+    html {
+      font-size: 36px;
+    }
+  }
+
+  @media (min-width: 3552px) {
+    html {
+      font-size: 39px;
+    }
+  }
+
+  @media (min-width: 3816px) {
+    html {
+      font-size: 42px;
+    }
   }
 }
 
