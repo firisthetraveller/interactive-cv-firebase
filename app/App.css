@@ -102,9 +102,15 @@ body {
     }
   }
 
+  @media (min-width: 4650px) {
+    html {
+      font-size: 48px;
+    }
+  }
+
   @supports not (-webkit-hyphens: none) {
     html {
-      font-size: clamp(16px, 1.05vw, 42px);
+      font-size: clamp(16px, 1.05vw, 50px);
     }
   }
 }
