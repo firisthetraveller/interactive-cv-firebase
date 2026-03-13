@@ -1,4 +1,4 @@
-:HL["/interactive-cv-firebase/_next/static/chunks/4376d00a142a90a1.css","style"]
+:HL["/interactive-cv-firebase/_next/static/chunks/fee429c6aeb01d14.css","style"]
 :HC["/",""]
 :HL["https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,400;1,200&family=Poppins:wght@400;600;700;800&display=swap","style"]
-0:{"buildId":"nHR1XNNQjVbZ6UIf7xzbO","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
+0:{"buildId":"PWX30fmiaQcm7Wyvx_ZZ2","tree":{"name":"","paramType":null,"paramKey":"","hasRuntimePrefetch":false,"slots":{"children":{"name":"__PAGE__","paramType":null,"paramKey":"__PAGE__","hasRuntimePrefetch":false,"slots":null,"isRootLayout":false}},"isRootLayout":true},"staleTime":300}
