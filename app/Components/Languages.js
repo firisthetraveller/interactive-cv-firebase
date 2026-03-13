@@ -5,9 +5,11 @@ import useLanguage from "../Hooks/useLanguage";
 import DataContext from "../Contexts/DataContext";
 
 import Heading from "./Base/Heading";
+import useWindowProperties from "../Hooks/useWindowProperties";
 
 const LanguageDisplay = React.memo(({ name, level, certification }) => {
     const [showCert, setShowCert] = useState(false);
+    const { isMobile } = useWindowProperties();
 
     const handleMouseEnter = useCallback(() => setShowCert(true), []);
     const handleMouseLeave = useCallback(() => setShowCert(false), []);
@@ -16,7 +18,7 @@ const LanguageDisplay = React.memo(({ name, level, certification }) => {
         <>
             {certification
                 ? <div onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-                    <p>{name} {level} {showCert && <span className="fade-in italic text-sm px-1 xl:text-yellow-300 xl:text-shadow-light xl:pixel-font">
+                    <p>{name} {level} {(showCert || isMobile()) && <span className="fade-in italic text-sm px-1 xl:text-yellow-300 xl:text-shadow-light xl:pixel-font">
                         {certification}
                     </span>}</p>
                 </div>
