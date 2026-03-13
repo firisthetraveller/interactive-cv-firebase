@@ -23,10 +23,10 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
     const { toggleLight } = useLights();
 
     return (
-        <div className="flex items-center cursor-pointer min-h-11" onClick={() => toggleLight(name)}>
-            {icon && <Image className={`m-2 ${noname ? "w-24" : "w-8"} h-auto`} src={icon} alt={name} aria-label={`icon for ${name}`} />}
-            {faIcon && <FontAwesomeIcon icon={faIcon} className="m-2 text-xl" />}
-            {!noname && <p className="mx-2">{name}</p>}
+        <div className="flex items-center cursor-pointer mx-2 gap-x-2 min-h-11" onClick={() => toggleLight(name)}>
+            {icon && <Image className={`${noname ? "w-24" : "w-8"} h-auto`} src={icon} alt={name} aria-label={`icon for ${name}`} />}
+            {faIcon && <FontAwesomeIcon icon={faIcon} className="text-xl" />}
+            {!noname && <p className="font-bold">{name}</p>}
         </div>
     )
 }
@@ -46,7 +46,7 @@ const Skills = () => {
     /** Tailwind loader for skill icons */
     // eslint-disable-next-line no-unused-vars
     const dummy = (
-        <div className="xl:bg-cyan-950 xl:bg-cyan-500 bg-cyan-800/50 xl:bg-gray-950 xl:bg-gray-500 bg-gray-800/50 xl:bg-orange-950 xl:bg-orange-500 bg-orange-800/50 xl:bg-green-950 xl:bg-green-500 bg-green-800/50 xl:bg-sky-950 xl:bg-sky-500 bg-sky-800/50" />
+        <div className="xl:bg-cyan-950 xl:bg-cyan-500 bg-cyan-800/50 xl:bg-gray-950 xl:bg-gray-500 bg-gray-500/50 xl:bg-orange-950 xl:bg-orange-500 bg-orange-800/50 xl:bg-green-950 xl:bg-green-500 bg-green-800/50 xl:bg-sky-950 xl:bg-sky-500 bg-sky-800/50" />
     )
 
     const title = useContext(DataContext).sections.skills[language];
@@ -62,7 +62,7 @@ const Skills = () => {
             <div className="flex items-center text-white flex-wrap relative">
                 {skills.map((s, i) =>
                     <div key={i} className={`xl:border-solid relative xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
-                        {isMobile() && isActiveLight(s.name) && <div className={`absolute transform-gpu inset-0 bg-${s.color}-800/50 blur-md border-white border rounded-xl pointer-events-none -z-10`} />}
+                        {isMobile() && isActiveLight(s.name) && <div className={`absolute transform-gpu inset-1 ${s.color === "gray" ? "bg-gray-500/50" : `bg-${s.color}-800/50`} blur-xs rounded-xl pointer-events-none -z-10`} />}
                         <Icon name={s.name} icon={s.icon} faIcon={s.faIcon} noname={s.noname} />
                     </div>
                 )}
