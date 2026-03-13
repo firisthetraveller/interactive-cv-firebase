@@ -20,7 +20,7 @@ const SideView = () => {
     const { isMobile, isVeryLargeDesktop } = useWindowProperties();
     const { language } = useLanguage();
 
-    const [parallaxSpeed, setParallaxSpeed] = useState(0.65);
+    const [parallaxSpeed, setParallaxSpeed] = useState(0.929);
 
     const { style: leftStyle } = useCustomParallax(parallaxSpeed);
     const { style: buildingStyle } = useCustomParallax(0.07);
