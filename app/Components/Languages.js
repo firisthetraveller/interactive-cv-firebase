@@ -1,9 +1,10 @@
 import React, { useCallback, useContext, useState } from "react";
 
-import Heading from "./Base/Heading";
-import { language, localeText } from "../Tools/lang";
-import DataContext from "../Contexts/DataContext";
 import useCollection from "../Hooks/useCollection";
+import useLanguage from "../Hooks/useLanguage";
+import DataContext from "../Contexts/DataContext";
+
+import Heading from "./Base/Heading";
 
 const LanguageDisplay = React.memo(({ name, level, certification }) => {
     const [showCert, setShowCert] = useState(false);
@@ -39,6 +40,7 @@ const LanguagesEmpty = () => {
 
 const Languages = () => {
     const title = useContext(DataContext).sections.languages;
+    const { language, localeText } = useLanguage();
     const { data: languages, isPending, error } = useCollection("languages");
 
     return (

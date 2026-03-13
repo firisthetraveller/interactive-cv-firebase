@@ -5,11 +5,10 @@ import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import useTheaterProjector from "../../Hooks/useTheaterProjector";
+import useLanguage from "../../Hooks/useLanguage";
 
 import Heading from "../Base/Heading";
 import HoverableTag from "../Base/HoverableTag";
-
-import { language, localeText } from "../../Tools/lang";
 
 const dateFormatOptions = {
     year: "numeric",
@@ -54,6 +53,7 @@ export const HighlightEmptyFloor = () => {
 
 export const HighlightBuildingFloor = ({ project, hoverStyle }) => {
     const [isHovered, setHovered] = useState(false);
+    const { language, localeText } = useLanguage();
     const { clearTheater, switchMovie } = useTheaterProjector();
 
     return (

@@ -1,12 +1,13 @@
 import { useContext, useEffect, useState } from "react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-import Heading from "./Base/Heading";
-import DataContext from "../Contexts/DataContext";
-import { language } from "../Tools/lang";
+import useLanguage from "../Hooks/useLanguage";
 import useCollection from "../Hooks/useCollection";
+
+import DataContext from "../Contexts/DataContext";
 import IconContext from "../Contexts/IconContext";
+
+import Heading from "./Base/Heading";
 
 const InterestEmpty = () => {
     return (
@@ -28,6 +29,7 @@ const InterestEmptyList = () => {
 const Interests = () => {
     const title = useContext(DataContext).sections.interests;
     const placeholder = useContext(DataContext).placeholders.interestInfo;
+    const { language } = useLanguage();
 
     const [infoLines, setInfoLines] = useState("");
     const { data: interests, isPending, error } = useCollection("interests");
@@ -66,6 +68,7 @@ const Interests = () => {
 
 const Icon = ({ className, data, onHover, onExit }) => {
     const icons = useContext(IconContext);
+    const { language } = useLanguage();
 
     return (
         <div className={`flex items-center gap-x-3 ${className}`} onMouseEnter={onHover} onMouseLeave={onExit} >

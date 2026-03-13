@@ -1,11 +1,13 @@
+import { useContext } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import IconContext from "../Contexts/IconContext";
+import DataContext from "../Contexts/DataContext";
+
+import useCollection from "../Hooks/useCollection";
+import useLanguage from "../Hooks/useLanguage";
 
 import Heading from "./Base/Heading";
-import { useContext } from "react";
-import DataContext from "../Contexts/DataContext";
-import { language } from "../Tools/lang";
-import useCollection from "../Hooks/useCollection";
 
 const ContactsEmpty = () => {
     return (
@@ -20,6 +22,7 @@ const ContactsEmpty = () => {
 
 const Contacts = () => {
     const { data: contacts, isPending, error } = useCollection("personal");
+    const { language } = useLanguage();
 
     const role = useContext(DataContext).sections.role[language];
     const icons = useContext(IconContext);

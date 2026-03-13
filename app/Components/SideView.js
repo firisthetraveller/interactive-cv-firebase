@@ -4,6 +4,7 @@ import DataContext from "../Contexts/DataContext";
 
 import useWindowProperties from "../Hooks/useWindowProperties";
 import useCustomParallax from "../Hooks/useCustomParallax";
+import useLanguage from "../Hooks/useLanguage";
 
 import Languages from "./Languages";
 import Contacts from "./Contacts";
@@ -14,10 +15,10 @@ import Education from "./Education";
 const BuildingScreen = React.lazy(() => import('./BuildingScreen'));
 const Background = React.lazy(() => import('./Deco/Background'));
 
-import { language } from "../Tools/lang";
 
 const SideView = () => {
     const { isMobile, isVeryLargeDesktop } = useWindowProperties();
+    const { language } = useLanguage();
 
     const [parallaxSpeed, setParallaxSpeed] = useState(0.65);
 

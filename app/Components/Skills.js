@@ -6,10 +6,11 @@ import { faReact } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
 import useWindowProperties from "../Hooks/useWindowProperties";
+import useLanguage from "../Hooks/useLanguage";
+
+import DataContext from "../Contexts/DataContext";
 
 import Heading from "./Base/Heading";
-import DataContext from "../Contexts/DataContext";
-import { language } from "../Tools/lang";
 
 import firebaseLogo from "../../public/assets/icons/firebase.svg";
 import tailwindLogo from "../../public/assets/icons/tailwind.svg";
@@ -34,6 +35,7 @@ const Icon = ({ name, icon, faIcon, noname = false }) => {
 const Skills = () => {
     const { isActiveLight } = useLights();
     const { width, isMobile } = useWindowProperties();
+    const { language } = useLanguage();
 
     const skills = [
         { name: "React", faIcon: faReact, color: "cyan" },

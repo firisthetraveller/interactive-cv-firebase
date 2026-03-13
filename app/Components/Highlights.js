@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 
 import useWindowProperties from "../Hooks/useWindowProperties.js";
 import useCollection from "../Hooks/useCollection.js";
+import useLanguage from "../Hooks/useLanguage.js";
+
 import DataContext from "../Contexts/DataContext.js";
 
 import Heading from "./Base/Heading.js";
 const Sign = React.lazy(() => import("./Deco/Sign.js"));
 import { HighlightBuildingContent, HighlightBuildingEmpty } from "./Deco/HighlightBuildingContent.js";
 
-import { language } from "../Tools/lang.js";
 
 /**
  * 
@@ -21,6 +22,7 @@ import { language } from "../Tools/lang.js";
 const HighlightBuilding = ({ front = false, title, collection }) => {
     const { isMobile } = useWindowProperties();
     const { data: projects, isPending } = useCollection(collection);
+    const { language } = useLanguage();
 
     const hoverStyles = {
         front: "bg-slate-800 shadow-slate-800",
@@ -54,7 +56,7 @@ const HighlightBuilding = ({ front = false, title, collection }) => {
                 {/** Contents */}
                 <div>
                     {!projects
-                        ? <HighlightBuildingEmpty count={front ? 7 : 4}/>
+                        ? <HighlightBuildingEmpty count={front ? 7 : 4} />
                         : <HighlightBuildingContent projects={projects} hoverStyle={front ? hoverStyles.front : hoverStyles.back} />
                     }
                 </div>

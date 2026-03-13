@@ -2,13 +2,14 @@ import React, { useContext } from "react";
 
 import useWindowProperties from "../Hooks/useWindowProperties.js";
 import useCollection from "../Hooks/useCollection.js";
+import useLanguage from "../Hooks/useLanguage.js";
+
 import DataContext from "../Contexts/DataContext.js";
 
 import Heading from "./Base/Heading.js";
 import HoverableTag from "./Base/HoverableTag.js";
 const Sign = React.lazy(() => import("./Deco/Sign.js"));
 
-import { language } from "../Tools/lang.js";
 
 const EducationEmpty = () => {
     return (
@@ -16,16 +17,16 @@ const EducationEmpty = () => {
             {[...Array(3).keys()].map(i =>
                 <div className="flex flex-col pt-2 gap-1 px-2" key={i}>
                     {/** Title */}
-                    <Heading level={3} className="skeleton min-w-50 min-h-5"/>
+                    <Heading level={3} className="skeleton min-w-50 min-h-5" />
                     {/** Specialty */}
-                    <Heading level={3} className="skeleton min-w-50 min-h-5"/>
+                    <Heading level={3} className="skeleton min-w-50 min-h-5" />
 
                     {/** Description */}
-                    <p className="text-sm skeleton min-w-1/3 min-h-4"/>
-                    <p className="text-sm skeleton min-w-1/3 min-h-4"/>
+                    <p className="text-sm skeleton min-w-1/3 min-h-4" />
+                    <p className="text-sm skeleton min-w-1/3 min-h-4" />
 
                     <div className="flex flex-wrap gap-x-2">
-                        {[...Array(3).keys()].map(j => <div className="min-w-1/4 min-h-5 p-1 skeleton" key={j}/>)}
+                        {[...Array(3).keys()].map(j => <div className="min-w-1/4 min-h-5 p-1 skeleton" key={j} />)}
                     </div>
                 </div>
             )}
@@ -34,6 +35,8 @@ const EducationEmpty = () => {
 }
 
 const EducationApt = ({ data }) => {
+    const { language } = useLanguage();
+    
     return (
         <div className="pt-2 px-2">
             <Heading level={3}>{data.degree[language]}</Heading>
@@ -49,6 +52,7 @@ const EducationApt = ({ data }) => {
 
 const Education = () => {
     const { isMobile } = useWindowProperties();
+    const { language } = useLanguage();
     const title = useContext(DataContext).sections.education;
     const { data: schools, isPending, error } = useCollection("education");
 
@@ -72,7 +76,7 @@ const Education = () => {
             {/** Contents */}
             <div className="xl:bg-slate-800 xl:w-188 xl:h-45 xl:flex xl:flex-wrap xl:pl-8 xl:pb-8 xl:shadow xl:shadow-slate-800">
                 {/* <EducationEmpty /> */}
-            
+
                 {!schools
                     ? <EducationEmpty />
                     : schools.map(d =>
