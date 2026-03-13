@@ -46,7 +46,7 @@ const Skills = () => {
     /** Tailwind loader for skill icons */
     // eslint-disable-next-line no-unused-vars
     const dummy = (
-        <div className="xl:bg-cyan-950 xl:bg-cyan-500 max-lg:shadow-cyan-500 max-lg:shadow-gray-500 max-lg:shadow-orange-500 max-lg:shadow-sky-500 xl:bg-gray-950 xl:bg-gray-500 xl:bg-orange-950 xl:bg-orange-500 xl:bg-green-950 xl:bg-green-500 xl:bg-sky-950 xl:bg-sky-500" />
+        <div className="xl:bg-cyan-950 xl:bg-cyan-500 bg-cyan-800/50 xl:bg-gray-950 xl:bg-gray-500 bg-gray-800/50 xl:bg-orange-950 xl:bg-orange-500 bg-orange-800/50 xl:bg-green-950 xl:bg-green-500 bg-green-800/50 xl:bg-sky-950 xl:bg-sky-500 bg-sky-800/50" />
     )
 
     const title = useContext(DataContext).sections.skills[language];
@@ -57,11 +57,12 @@ const Skills = () => {
             {!isMobile() && <Image
                 src={CablesSVG} alt={"Deco cables behind skills"}
                 className="-z-10 translate-y-[0.4rem] absolute w-252 h-auto"
-                loading="eager"/>}
-            
-            <div className="flex items-center text-white flex-wrap">
+                loading="eager" />}
+
+            <div className="flex items-center text-white flex-wrap relative">
                 {skills.map((s, i) =>
-                    <div key={i} className={`xl:border-solid xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500 max-lg:shadow glow max-lg:shadow-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
+                    <div key={i} className={`xl:border-solid relative xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
+                        {isMobile() && isActiveLight(s.name) && <div className={`absolute inset-0 bg-${s.color}-800/50 blur-md border-white border rounded-xl pointer-events-none -z-10`} />}
                         <Icon name={s.name} icon={s.icon} faIcon={s.faIcon} noname={s.noname} />
                     </div>
                 )}

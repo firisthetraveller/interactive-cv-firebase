@@ -27,9 +27,10 @@ Visit your Pages settings in GitHub once done to get the link!
 
 ## The To-Do List
 ### Important
-[ ] Responsive for large screens (= 1920px)
-[ ] Responsive for very large screens (> 1920px)
+[x] Responsive for large screens (= 1920px)
+[x] Responsive for very large screens (> 1920px)
+[x] Responsive for mobile (< 1280px)
 
 ### Medium
 [ ] Cycle through image URLs for more previews.
-[ ] Add at least an image for every project/experience entry.
+[~] Add at least an image for every project/experience entry.
