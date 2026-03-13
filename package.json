@@ -1,6 +1,6 @@
 {
   "name": "interactive-cv",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "homepage": "https://firisthetraveller.github.io/interactive-cv-firebase",
   "private": true,
   "dependencies": {
