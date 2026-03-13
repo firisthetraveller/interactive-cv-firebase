@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useContext } from "react";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
+import { faReact, faJava, faPython } from "@fortawesome/free-brands-svg-icons";
 
 import useLights from "../Hooks/useLights";
 import useWindowProperties from "../Hooks/useWindowProperties";
@@ -41,14 +41,16 @@ const Skills = () => {
         { name: "React", faIcon: faReact, color: "cyan" },
         { name: "Next.JS", icon: nextLogo, color: "gray", nofilter: true },
         { name: "Firebase", icon: firebaseLogo, color: "orange", nofilter: true, noname: true },
-        { name: "D3", icon: d3Logo, color: "gray", nofilter: true },
-        { name: "Tailwind", icon: tailwindLogo, color: "sky", nofilter: true, noname: true }
+        // { name: "D3", icon: d3Logo, color: "gray", nofilter: true },
+        { name: "Java", faIcon: faJava, color: "blue", nofilter: true },
+        { name: "Python", faIcon: faPython, color: "yellow", nofilter: true },
+        // { name: "Tailwind", icon: tailwindLogo, color: "sky", nofilter: true, noname: true }
     ]
 
     /** Tailwind loader for skill icons */
     // eslint-disable-next-line no-unused-vars
     const dummy = (
-        <div className="xl:bg-cyan-950 xl:bg-cyan-500 bg-cyan-800/50 xl:bg-gray-950 xl:bg-gray-500 bg-gray-500/50 xl:bg-orange-950 xl:bg-orange-500 bg-orange-800/50 xl:bg-green-950 xl:bg-green-500 bg-green-800/50 xl:bg-sky-950 xl:bg-sky-500 bg-sky-800/50" />
+        <div className="xl:bg-cyan-950 xl:bg-cyan-500 bg-cyan-800/50 xl:bg-yellow-950 xl:bg-yellow-500 bg-yellow-800/50 xl:bg-blue-950 xl:bg-blue-500 bg-blue-800/50 xl:bg-gray-950 xl:bg-gray-500 bg-gray-500/50 xl:bg-orange-950 xl:bg-orange-500 bg-orange-800/50 xl:bg-green-950 xl:bg-green-500 bg-green-800/50 xl:bg-sky-950 xl:bg-sky-500 bg-sky-800/50" />
     )
 
     const title = useContext(DataContext).sections.skills[language];

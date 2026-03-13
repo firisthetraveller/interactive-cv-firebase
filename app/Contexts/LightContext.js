@@ -5,7 +5,7 @@ export const LightContext = createContext(null);
 const permanentLights = ["Mentoring", "Active listening", "Code review", "Empathy", "Problem solving", "Self-learning"];
 
 export const LightProvider = ({children}) => {
-    const [lights, dispatch] = useReducer(lightReducer, ["React", "Firebase", "Tailwind", "Next.JS", "D3"]);
+    const [lights, dispatch] = useReducer(lightReducer, ["React", "Firebase", "Tailwind", "Next.JS", "D3", "Java", "Python", "VueJS"]);
 
     const toggleLight = (name) => {
         dispatch({
