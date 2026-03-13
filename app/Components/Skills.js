@@ -62,7 +62,7 @@ const Skills = () => {
             <div className="flex items-center text-white flex-wrap relative">
                 {skills.map((s, i) =>
                     <div key={i} className={`xl:border-solid relative xl:rounded xl:mx-1 ${isActiveLight(s.name) ? `xl:bg-${s.color}-500` : `xl:bg-${s.color}-950`}`}>
-                        {isMobile() && isActiveLight(s.name) && <div className={`absolute inset-0 bg-${s.color}-800/50 blur-md border-white border rounded-xl pointer-events-none -z-10`} />}
+                        {isMobile() && isActiveLight(s.name) && <div className={`absolute transform-gpu inset-0 bg-${s.color}-800/50 blur-md border-white border rounded-xl pointer-events-none -z-10`} />}
                         <Icon name={s.name} icon={s.icon} faIcon={s.faIcon} noname={s.noname} />
                     </div>
                 )}
